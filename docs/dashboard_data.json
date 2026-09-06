@@ -53,111 +53,111 @@
  "worst": [
   {
    "ward_label": "149-Varthuru",
-   "median_min": 102.7,
+   "median_min": 102.66,
    "population": 54625,
-   "straight_line_km": 5.1
+   "straight_line_km": 5.08
   },
   {
    "ward_label": "150-Bellanduru",
    "median_min": 77.2,
    "population": 80180,
-   "straight_line_km": 5.5
+   "straight_line_km": 5.49
   },
   {
    "ward_label": "86-Marathahalli",
-   "median_min": 71.1,
+   "median_min": 71.07,
    "population": 39768,
-   "straight_line_km": 3.2
+   "straight_line_km": 3.23
   },
   {
    "ward_label": "191-Singasandra",
-   "median_min": 70.4,
+   "median_min": 70.38,
    "population": 71004,
-   "straight_line_km": 6.8
+   "straight_line_km": 6.76
   },
   {
    "ward_label": "196-Anjanapura",
-   "median_min": 66.3,
+   "median_min": 66.26,
    "population": 45608,
-   "straight_line_km": 5.6
+   "straight_line_km": 5.63
   },
   {
    "ward_label": "190-Mangammanapalya",
-   "median_min": 59.3,
+   "median_min": 59.33,
    "population": 65890,
-   "straight_line_km": 4.5
+   "straight_line_km": 4.47
   },
   {
    "ward_label": "192-Begur",
-   "median_min": 57.6,
+   "median_min": 57.64,
    "population": 80037,
-   "straight_line_km": 6.7
+   "straight_line_km": 6.69
   },
   {
    "ward_label": "194-Gottigere",
-   "median_min": 54.5,
+   "median_min": 54.54,
    "population": 51911,
-   "straight_line_km": 5.6
+   "straight_line_km": 5.61
   },
   {
    "ward_label": "40-Dodda Bidarakallu",
    "median_min": 53.7,
    "population": 72794,
-   "straight_line_km": 5.7
+   "straight_line_km": 5.68
   },
   {
    "ward_label": "83-Kadugodi",
-   "median_min": 52.6,
+   "median_min": 52.57,
    "population": 43942,
-   "straight_line_km": 3.4
+   "straight_line_km": 3.42
   },
   {
    "ward_label": "70-Rajagopal Nagar",
-   "median_min": 51.8,
+   "median_min": 51.81,
    "population": 61479,
-   "straight_line_km": 4.1
+   "straight_line_km": 4.06
   },
   {
    "ward_label": "195-Konankunte",
-   "median_min": 51.8,
+   "median_min": 51.76,
    "population": 57335,
-   "straight_line_km": 3.0
+   "straight_line_km": 3.03
   }
  ],
  "best": [
   {
    "ward_label": "139-K R Market",
-   "median_min": 3.0,
+   "median_min": 3.04,
    "population": 29344,
-   "straight_line_km": 0.2
+   "straight_line_km": 0.24
   },
   {
    "ward_label": "97-Dayananda Nagar",
-   "median_min": 3.2,
+   "median_min": 3.25,
    "population": 35721,
-   "straight_line_km": 0.3
+   "straight_line_km": 0.26
   },
   {
    "ward_label": "92-Shivaji Nagar",
-   "median_min": 3.3,
+   "median_min": 3.29,
    "population": 37506,
-   "straight_line_km": 0.3
+   "straight_line_km": 0.26
   },
   {
    "ward_label": "169-Byrasandra",
-   "median_min": 3.6,
+   "median_min": 3.56,
    "population": 32066,
-   "straight_line_km": 0.3
+   "straight_line_km": 0.29
   },
   {
    "ward_label": "137-Rayapuram",
-   "median_min": 4.6,
+   "median_min": 4.61,
    "population": 36039,
-   "straight_line_km": 0.4
+   "straight_line_km": 0.37
   },
   {
    "ward_label": "153-Jayanagar",
-   "median_min": 5.0,
+   "median_min": 4.95,
    "population": 38151,
    "straight_line_km": 0.4
   },
@@ -165,108 +165,108 @@
    "ward_label": "165-Ganesh Mandir ward",
    "median_min": 5.5,
    "population": 25998,
-   "straight_line_km": 0.4
+   "straight_line_km": 0.44
   },
   {
    "ward_label": "107-Shivanagara",
-   "median_min": 5.7,
+   "median_min": 5.68,
    "population": 36461,
-   "straight_line_km": 0.5
+   "straight_line_km": 0.46
   },
   {
    "ward_label": "99-Rajaji Nagar",
-   "median_min": 6.0,
+   "median_min": 6.05,
    "population": 33084,
-   "straight_line_km": 0.5
+   "straight_line_km": 0.48
   },
   {
    "ward_label": "170-Jayanagar East",
-   "median_min": 6.2,
+   "median_min": 6.24,
    "population": 33927,
    "straight_line_km": 0.5
   },
   {
    "ward_label": "182-Padmanabha Nagar",
-   "median_min": 6.5,
+   "median_min": 6.51,
    "population": 41037,
-   "straight_line_km": 0.5
+   "straight_line_km": 0.52
   },
   {
    "ward_label": "105-Agrahara Dasarahalli",
-   "median_min": 6.6,
+   "median_min": 6.55,
    "population": 28355,
-   "straight_line_km": 0.5
+   "straight_line_km": 0.53
   }
  ],
  "close_but_slow": [
   {
    "ward_label": "86-Marathahalli",
-   "median_min": 71.1,
-   "straight_line_km": 3.2,
-   "penalty_ratio": 1.8,
+   "median_min": 71.07,
+   "straight_line_km": 3.23,
+   "penalty_ratio": 1.76,
    "population": 39768
   },
   {
    "ward_label": "13-Mallasandra",
-   "median_min": 43.6,
-   "straight_line_km": 2.2,
-   "penalty_ratio": 1.6,
+   "median_min": 43.55,
+   "straight_line_km": 2.19,
+   "penalty_ratio": 1.59,
    "population": 41482
   },
   {
    "ward_label": "197-Vasanthpura",
-   "median_min": 41.6,
-   "straight_line_km": 2.2,
-   "penalty_ratio": 1.5,
+   "median_min": 41.58,
+   "straight_line_km": 2.23,
+   "penalty_ratio": 1.49,
    "population": 62057
   },
   {
    "ward_label": "87-HAL Airport",
    "median_min": 40.3,
-   "straight_line_km": 2.2,
-   "penalty_ratio": 1.5,
+   "straight_line_km": 2.18,
+   "penalty_ratio": 1.48,
    "population": 39926
   },
   {
    "ward_label": "84-Hagadur",
-   "median_min": 48.6,
-   "straight_line_km": 2.6,
-   "penalty_ratio": 1.5,
+   "median_min": 48.61,
+   "straight_line_km": 2.64,
+   "penalty_ratio": 1.47,
    "population": 50556
   },
   {
    "ward_label": "187-Puttenahalli",
-   "median_min": 41.8,
-   "straight_line_km": 2.3,
-   "penalty_ratio": 1.4,
+   "median_min": 41.83,
+   "straight_line_km": 2.35,
+   "penalty_ratio": 1.43,
    "population": 49207
   },
   {
    "ward_label": "195-Konankunte",
-   "median_min": 51.8,
-   "straight_line_km": 3.0,
-   "penalty_ratio": 1.4,
+   "median_min": 51.76,
+   "straight_line_km": 3.03,
+   "penalty_ratio": 1.37,
    "population": 57335
   },
   {
    "ward_label": "188-Bilekhalli",
-   "median_min": 41.4,
-   "straight_line_km": 2.5,
-   "penalty_ratio": 1.3,
+   "median_min": 41.44,
+   "straight_line_km": 2.49,
+   "penalty_ratio": 1.33,
    "population": 49884
   },
   {
    "ward_label": "16-Jalahalli",
-   "median_min": 38.6,
-   "straight_line_km": 2.3,
-   "penalty_ratio": 1.3,
+   "median_min": 38.58,
+   "straight_line_km": 2.33,
+   "penalty_ratio": 1.32,
    "population": 37959
   },
   {
    "ward_label": "25-Horamavu",
-   "median_min": 36.7,
-   "straight_line_km": 2.3,
-   "penalty_ratio": 1.3,
+   "median_min": 36.67,
+   "straight_line_km": 2.28,
+   "penalty_ratio": 1.29,
    "population": 95368
   }
  ],
@@ -274,61 +274,61 @@
   {
    "ward_label": "131-Nayandahalli",
    "median_min": 35.3,
-   "straight_line_km": 4.3,
+   "straight_line_km": 4.27,
    "population": 42785
   },
   {
    "ward_label": "71-Hegganahalli",
-   "median_min": 40.1,
-   "straight_line_km": 5.0,
+   "median_min": 40.06,
+   "straight_line_km": 4.97,
    "population": 66314
   },
   {
    "ward_label": "129-Jnana Bharathi ward",
-   "median_min": 43.0,
-   "straight_line_km": 4.6,
+   "median_min": 42.95,
+   "straight_line_km": 4.59,
    "population": 68132
   },
   {
    "ward_label": "11-Kuvempu Nagar",
-   "median_min": 45.9,
-   "straight_line_km": 4.0,
+   "median_min": 45.85,
+   "straight_line_km": 4.02,
    "population": 37128
   },
   {
    "ward_label": "72-Herohalli",
-   "median_min": 47.0,
-   "straight_line_km": 6.0,
+   "median_min": 46.96,
+   "straight_line_km": 6.04,
    "population": 62272
   },
   {
    "ward_label": "193-Arakere",
-   "median_min": 47.6,
-   "straight_line_km": 4.4,
+   "median_min": 47.56,
+   "straight_line_km": 4.44,
    "population": 58355
   },
   {
    "ward_label": "70-Rajagopal Nagar",
-   "median_min": 51.8,
-   "straight_line_km": 4.1,
+   "median_min": 51.81,
+   "straight_line_km": 4.06,
    "population": 61479
   },
   {
    "ward_label": "40-Dodda Bidarakallu",
    "median_min": 53.7,
-   "straight_line_km": 5.7,
+   "straight_line_km": 5.68,
    "population": 72794
   },
   {
    "ward_label": "194-Gottigere",
-   "median_min": 54.5,
-   "straight_line_km": 5.6,
+   "median_min": 54.54,
+   "straight_line_km": 5.61,
    "population": 51911
   },
   {
    "ward_label": "192-Begur",
-   "median_min": 57.6,
-   "straight_line_km": 6.7,
+   "median_min": 57.64,
+   "straight_line_km": 6.69,
    "population": 80037
   }
  ],

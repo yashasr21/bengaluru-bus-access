@@ -143,6 +143,12 @@ def build_interactive(wards, hospitals, stops):
                                       aliases=["Stop", "Nearest hospital"]),
     ).add_to(fmap)
 
+    # Frame the city rather than trusting a fixed zoom level. The dashboard
+    # embeds this in an iframe whose shape changes with the window, and a fixed
+    # zoom opened wide enough to show Hosur with Bengaluru in the corner.
+    west, south, east, north = latlon.total_bounds
+    fmap.fit_bounds([[south, west], [north, east]], padding=(8, 8))
+
     folium.LayerControl(collapsed=False).add_to(fmap)
 
     swatches = "".join(
@@ -259,7 +265,10 @@ def build_dashboard_data(wards, hospitals, stops):
         )
 
     def table(frame, columns):
-        return frame[columns].round(1).to_dict("records")
+        # Two decimals, not one. The ratio column is displayed to two places on
+        # the page, so rounding to one here turned 1.76 into "1.80" and put the
+        # dashboard at odds with sql/findings.md.
+        return frame[columns].round(2).to_dict("records")
 
     worst = access.nlargest(12, "median_min")
     best = access.nsmallest(12, "median_min")
