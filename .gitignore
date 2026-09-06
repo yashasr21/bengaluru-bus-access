@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+
+# The GTFS feed is 43 MB zipped and 200 MB unzipped. download_data.py fetches
+# it, so there is no reason to carry it in the repository.
+data/raw/gtfs/
+data/raw/bmtc-gtfs.zip
+
+# Rebuilt in seconds by 07_build_database.py
+data/processed/bus_access.db
