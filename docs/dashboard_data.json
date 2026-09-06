@@ -1,0 +1,1781 @@
+{
+ "generated_from": {
+  "gtfs": "BMTC unofficial GTFS, feed version 20260712",
+  "wards": "BBMP 2022 delimitation ward layer, Census 2011 population",
+  "hospitals": "Karnataka health GIS facility layers"
+ },
+ "headline": {
+  "population": 8443675,
+  "wards": 198,
+  "hospitals": 51,
+  "stops": 9681,
+  "routes": 4264,
+  "trips": 56442,
+  "city_median_min": 18.4,
+  "pop_under_30": 5790535,
+  "pop_over_45": 1033678,
+  "pop_over_60": 291185,
+  "wards_over_45": 18,
+  "stops_near_hospital": 325,
+  "share_stops_needing_change": 30.2,
+  "frequent_patterns_share": 6.6
+ },
+ "bands": [
+  {
+   "band": "Under 30 min",
+   "wards": 149,
+   "population": 5790535,
+   "share": 68.6,
+   "colour": "#2e8b7a"
+  },
+  {
+   "band": "30 to 45 min",
+   "wards": 31,
+   "population": 1619462,
+   "share": 19.2,
+   "colour": "#e8c468"
+  },
+  {
+   "band": "45 to 60 min",
+   "wards": 13,
+   "population": 742493,
+   "share": 8.8,
+   "colour": "#e08a4a"
+  },
+  {
+   "band": "Over 60 min",
+   "wards": 5,
+   "population": 291185,
+   "share": 3.4,
+   "colour": "#c0392b"
+  }
+ ],
+ "worst": [
+  {
+   "ward_label": "149-Varthuru",
+   "median_min": 102.7,
+   "population": 54625,
+   "straight_line_km": 5.1
+  },
+  {
+   "ward_label": "150-Bellanduru",
+   "median_min": 77.2,
+   "population": 80180,
+   "straight_line_km": 5.5
+  },
+  {
+   "ward_label": "86-Marathahalli",
+   "median_min": 71.1,
+   "population": 39768,
+   "straight_line_km": 3.2
+  },
+  {
+   "ward_label": "191-Singasandra",
+   "median_min": 70.4,
+   "population": 71004,
+   "straight_line_km": 6.8
+  },
+  {
+   "ward_label": "196-Anjanapura",
+   "median_min": 66.3,
+   "population": 45608,
+   "straight_line_km": 5.6
+  },
+  {
+   "ward_label": "190-Mangammanapalya",
+   "median_min": 59.3,
+   "population": 65890,
+   "straight_line_km": 4.5
+  },
+  {
+   "ward_label": "192-Begur",
+   "median_min": 57.6,
+   "population": 80037,
+   "straight_line_km": 6.7
+  },
+  {
+   "ward_label": "194-Gottigere",
+   "median_min": 54.5,
+   "population": 51911,
+   "straight_line_km": 5.6
+  },
+  {
+   "ward_label": "40-Dodda Bidarakallu",
+   "median_min": 53.7,
+   "population": 72794,
+   "straight_line_km": 5.7
+  },
+  {
+   "ward_label": "83-Kadugodi",
+   "median_min": 52.6,
+   "population": 43942,
+   "straight_line_km": 3.4
+  },
+  {
+   "ward_label": "70-Rajagopal Nagar",
+   "median_min": 51.8,
+   "population": 61479,
+   "straight_line_km": 4.1
+  },
+  {
+   "ward_label": "195-Konankunte",
+   "median_min": 51.8,
+   "population": 57335,
+   "straight_line_km": 3.0
+  }
+ ],
+ "best": [
+  {
+   "ward_label": "139-K R Market",
+   "median_min": 3.0,
+   "population": 29344,
+   "straight_line_km": 0.2
+  },
+  {
+   "ward_label": "97-Dayananda Nagar",
+   "median_min": 3.2,
+   "population": 35721,
+   "straight_line_km": 0.3
+  },
+  {
+   "ward_label": "92-Shivaji Nagar",
+   "median_min": 3.3,
+   "population": 37506,
+   "straight_line_km": 0.3
+  },
+  {
+   "ward_label": "169-Byrasandra",
+   "median_min": 3.6,
+   "population": 32066,
+   "straight_line_km": 0.3
+  },
+  {
+   "ward_label": "137-Rayapuram",
+   "median_min": 4.6,
+   "population": 36039,
+   "straight_line_km": 0.4
+  },
+  {
+   "ward_label": "153-Jayanagar",
+   "median_min": 5.0,
+   "population": 38151,
+   "straight_line_km": 0.4
+  },
+  {
+   "ward_label": "165-Ganesh Mandir ward",
+   "median_min": 5.5,
+   "population": 25998,
+   "straight_line_km": 0.4
+  },
+  {
+   "ward_label": "107-Shivanagara",
+   "median_min": 5.7,
+   "population": 36461,
+   "straight_line_km": 0.5
+  },
+  {
+   "ward_label": "99-Rajaji Nagar",
+   "median_min": 6.0,
+   "population": 33084,
+   "straight_line_km": 0.5
+  },
+  {
+   "ward_label": "170-Jayanagar East",
+   "median_min": 6.2,
+   "population": 33927,
+   "straight_line_km": 0.5
+  },
+  {
+   "ward_label": "182-Padmanabha Nagar",
+   "median_min": 6.5,
+   "population": 41037,
+   "straight_line_km": 0.5
+  },
+  {
+   "ward_label": "105-Agrahara Dasarahalli",
+   "median_min": 6.6,
+   "population": 28355,
+   "straight_line_km": 0.5
+  }
+ ],
+ "close_but_slow": [
+  {
+   "ward_label": "86-Marathahalli",
+   "median_min": 71.1,
+   "straight_line_km": 3.2,
+   "penalty_ratio": 1.8,
+   "population": 39768
+  },
+  {
+   "ward_label": "13-Mallasandra",
+   "median_min": 43.6,
+   "straight_line_km": 2.2,
+   "penalty_ratio": 1.6,
+   "population": 41482
+  },
+  {
+   "ward_label": "197-Vasanthpura",
+   "median_min": 41.6,
+   "straight_line_km": 2.2,
+   "penalty_ratio": 1.5,
+   "population": 62057
+  },
+  {
+   "ward_label": "87-HAL Airport",
+   "median_min": 40.3,
+   "straight_line_km": 2.2,
+   "penalty_ratio": 1.5,
+   "population": 39926
+  },
+  {
+   "ward_label": "84-Hagadur",
+   "median_min": 48.6,
+   "straight_line_km": 2.6,
+   "penalty_ratio": 1.5,
+   "population": 50556
+  },
+  {
+   "ward_label": "187-Puttenahalli",
+   "median_min": 41.8,
+   "straight_line_km": 2.3,
+   "penalty_ratio": 1.4,
+   "population": 49207
+  },
+  {
+   "ward_label": "195-Konankunte",
+   "median_min": 51.8,
+   "straight_line_km": 3.0,
+   "penalty_ratio": 1.4,
+   "population": 57335
+  },
+  {
+   "ward_label": "188-Bilekhalli",
+   "median_min": 41.4,
+   "straight_line_km": 2.5,
+   "penalty_ratio": 1.3,
+   "population": 49884
+  },
+  {
+   "ward_label": "16-Jalahalli",
+   "median_min": 38.6,
+   "straight_line_km": 2.3,
+   "penalty_ratio": 1.3,
+   "population": 37959
+  },
+  {
+   "ward_label": "25-Horamavu",
+   "median_min": 36.7,
+   "straight_line_km": 2.3,
+   "penalty_ratio": 1.3,
+   "population": 95368
+  }
+ ],
+ "far_but_fine": [
+  {
+   "ward_label": "131-Nayandahalli",
+   "median_min": 35.3,
+   "straight_line_km": 4.3,
+   "population": 42785
+  },
+  {
+   "ward_label": "71-Hegganahalli",
+   "median_min": 40.1,
+   "straight_line_km": 5.0,
+   "population": 66314
+  },
+  {
+   "ward_label": "129-Jnana Bharathi ward",
+   "median_min": 43.0,
+   "straight_line_km": 4.6,
+   "population": 68132
+  },
+  {
+   "ward_label": "11-Kuvempu Nagar",
+   "median_min": 45.9,
+   "straight_line_km": 4.0,
+   "population": 37128
+  },
+  {
+   "ward_label": "72-Herohalli",
+   "median_min": 47.0,
+   "straight_line_km": 6.0,
+   "population": 62272
+  },
+  {
+   "ward_label": "193-Arakere",
+   "median_min": 47.6,
+   "straight_line_km": 4.4,
+   "population": 58355
+  },
+  {
+   "ward_label": "70-Rajagopal Nagar",
+   "median_min": 51.8,
+   "straight_line_km": 4.1,
+   "population": 61479
+  },
+  {
+   "ward_label": "40-Dodda Bidarakallu",
+   "median_min": 53.7,
+   "straight_line_km": 5.7,
+   "population": 72794
+  },
+  {
+   "ward_label": "194-Gottigere",
+   "median_min": 54.5,
+   "straight_line_km": 5.6,
+   "population": 51911
+  },
+  {
+   "ward_label": "192-Begur",
+   "median_min": 57.6,
+   "straight_line_km": 6.7,
+   "population": 80037
+  }
+ ],
+ "scatter": [
+  {
+   "ward_label": "139-K R Market",
+   "straight_line_km": 0.24,
+   "median_min": 3.04,
+   "population": 29344,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "97-Dayananda Nagar",
+   "straight_line_km": 0.26,
+   "median_min": 3.25,
+   "population": 35721,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "92-Shivaji Nagar",
+   "straight_line_km": 0.26,
+   "median_min": 3.29,
+   "population": 37506,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "169-Byrasandra",
+   "straight_line_km": 0.29,
+   "median_min": 3.56,
+   "population": 32066,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "137-Rayapuram",
+   "straight_line_km": 0.37,
+   "median_min": 4.61,
+   "population": 36039,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "153-Jayanagar",
+   "straight_line_km": 0.4,
+   "median_min": 4.95,
+   "population": 38151,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "165-Ganesh Mandir ward",
+   "straight_line_km": 0.44,
+   "median_min": 5.5,
+   "population": 25998,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "107-Shivanagara",
+   "straight_line_km": 0.46,
+   "median_min": 5.68,
+   "population": 36461,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "99-Rajaji Nagar",
+   "straight_line_km": 0.48,
+   "median_min": 6.05,
+   "population": 33084,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "170-Jayanagar East",
+   "straight_line_km": 0.5,
+   "median_min": 6.24,
+   "population": 33927,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "182-Padmanabha Nagar",
+   "straight_line_km": 0.52,
+   "median_min": 6.51,
+   "population": 41037,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "105-Agrahara Dasarahalli",
+   "straight_line_km": 0.53,
+   "median_min": 6.55,
+   "population": 28355,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "96-Okalipuram",
+   "straight_line_km": 0.54,
+   "median_min": 6.78,
+   "population": 38110,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "119-Dharmaraya Swamy Temple wa",
+   "straight_line_km": 0.55,
+   "median_min": 6.88,
+   "population": 27076,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "89-Jogupalya",
+   "straight_line_km": 0.55,
+   "median_min": 6.91,
+   "population": 33793,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "120-Cottonpete",
+   "straight_line_km": 0.56,
+   "median_min": 6.99,
+   "population": 37344,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "98-Prakash Nagar",
+   "straight_line_km": 0.57,
+   "median_min": 7.12,
+   "population": 32913,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "23-Nagavara",
+   "straight_line_km": 0.58,
+   "median_min": 7.25,
+   "population": 60483,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "95-Subhash Nagar",
+   "straight_line_km": 0.59,
+   "median_min": 7.35,
+   "population": 37693,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "121-Binnipete",
+   "straight_line_km": 0.63,
+   "median_min": 7.93,
+   "population": 37354,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "181-Kumaraswamy Layout",
+   "straight_line_km": 0.64,
+   "median_min": 7.98,
+   "population": 47182,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "143-Vishveshwara Puram",
+   "straight_line_km": 0.65,
+   "median_min": 8.12,
+   "population": 32462,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "80-Hoysala Nagar",
+   "straight_line_km": 0.66,
+   "median_min": 8.24,
+   "population": 35228,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "76-Gayithri Nagar",
+   "straight_line_km": 0.66,
+   "median_min": 8.26,
+   "population": 33236,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "31-Kushal Nagar",
+   "straight_line_km": 0.7,
+   "median_min": 8.52,
+   "population": 41936,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "136-Jagajivanaramnagar",
+   "straight_line_km": 0.69,
+   "median_min": 8.61,
+   "population": 38639,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "144-Siddapura",
+   "straight_line_km": 0.7,
+   "median_min": 8.74,
+   "population": 34879,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "138-Chalavadipalya",
+   "straight_line_km": 0.7,
+   "median_min": 8.79,
+   "population": 24801,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "108-Sriramamandir",
+   "straight_line_km": 0.76,
+   "median_min": 8.9,
+   "population": 33866,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "30-Kadugondanahalli",
+   "straight_line_km": 0.72,
+   "median_min": 8.98,
+   "population": 45748,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "123-Vijayanagar",
+   "straight_line_km": 0.72,
+   "median_min": 8.99,
+   "population": 40331,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "168-Pattabhiram Nagar",
+   "straight_line_km": 0.73,
+   "median_min": 9.18,
+   "population": 28353,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "118-Sudham Nagara",
+   "straight_line_km": 0.74,
+   "median_min": 9.31,
+   "population": 28784,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "65-Kadu Malleshwar Ward",
+   "straight_line_km": 0.75,
+   "median_min": 9.36,
+   "population": 35609,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "122-Kempapura Agrahara",
+   "straight_line_km": 0.75,
+   "median_min": 9.43,
+   "population": 40032,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "110-Sampangiram Nagar",
+   "straight_line_km": 0.77,
+   "median_min": 9.56,
+   "population": 27504,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "106-Dr. Raj Kumar Ward",
+   "straight_line_km": 0.78,
+   "median_min": 9.72,
+   "population": 24181,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "104-Govindaraja Nagar",
+   "straight_line_km": 0.78,
+   "median_min": 9.76,
+   "population": 26873,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "180-Banashankari Temple ward",
+   "straight_line_km": 0.81,
+   "median_min": 10.17,
+   "population": 42171,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "63-Jayamahal",
+   "straight_line_km": 0.82,
+   "median_min": 10.27,
+   "population": 21728,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "77-Dattatreya Temple",
+   "straight_line_km": 0.86,
+   "median_min": 10.74,
+   "population": 33388,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "36-Mattikere",
+   "straight_line_km": 0.86,
+   "median_min": 10.81,
+   "population": 37036,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "151-Koramangala",
+   "straight_line_km": 0.87,
+   "median_min": 10.89,
+   "population": 38316,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "135-Padarayanapura",
+   "straight_line_km": 0.89,
+   "median_min": 11.16,
+   "population": 37599,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "171-Gurappanapalya",
+   "straight_line_km": 0.93,
+   "median_min": 11.63,
+   "population": 48991,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "145-Hombegowda Nagara",
+   "straight_line_km": 1.03,
+   "median_min": 11.69,
+   "population": 38309,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "164-Vidyapeeta ward",
+   "straight_line_km": 0.94,
+   "median_min": 11.8,
+   "population": 43483,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "146-Lakkasandra",
+   "straight_line_km": 0.95,
+   "median_min": 11.81,
+   "population": 30667,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "140-Chamrajapet",
+   "straight_line_km": 0.95,
+   "median_min": 11.85,
+   "population": 32213,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "152-Suddagunte Palya",
+   "straight_line_km": 0.96,
+   "median_min": 11.98,
+   "population": 39997,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "27-Banasavadi",
+   "straight_line_km": 0.96,
+   "median_min": 12.0,
+   "population": 51268,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "124-Hosahalli",
+   "straight_line_km": 0.97,
+   "median_min": 12.11,
+   "population": 37347,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "91-Bharathi Nagar",
+   "straight_line_km": 0.99,
+   "median_min": 12.41,
+   "population": 32689,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "100-Basaveshwara Nagar",
+   "straight_line_km": 0.99,
+   "median_min": 12.43,
+   "population": 30333,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "177-J P Nagar",
+   "straight_line_km": 1.03,
+   "median_min": 12.51,
+   "population": 28846,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "167-Yediyur",
+   "straight_line_km": 1.0,
+   "median_min": 12.51,
+   "population": 32756,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "185-Yelchenahalli",
+   "straight_line_km": 1.01,
+   "median_min": 12.57,
+   "population": 46943,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "111-Shantala Nagar",
+   "straight_line_km": 1.01,
+   "median_min": 12.67,
+   "population": 22995,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "42-Lakshmi Devi Nagar",
+   "straight_line_km": 1.47,
+   "median_min": 12.75,
+   "population": 41352,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "183-Chikkalsandra",
+   "straight_line_km": 1.02,
+   "median_min": 12.77,
+   "population": 43364,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "109-Chickpete",
+   "straight_line_km": 1.03,
+   "median_min": 12.85,
+   "population": 33292,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "90-Halsoor",
+   "straight_line_km": 1.06,
+   "median_min": 13.2,
+   "population": 35090,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "125-Marenahalli",
+   "straight_line_km": 1.26,
+   "median_min": 13.44,
+   "population": 21171,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "37-Yeshwanthpura",
+   "straight_line_km": 1.19,
+   "median_min": 13.45,
+   "population": 41107,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "159-Kengeri",
+   "straight_line_km": 1.21,
+   "median_min": 13.47,
+   "population": 40771,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "154-Basavanagudi",
+   "straight_line_km": 1.1,
+   "median_min": 13.8,
+   "population": 32640,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "18-Radhakrishna Temple Ward",
+   "straight_line_km": 1.11,
+   "median_min": 13.82,
+   "population": 35122,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "48-Muneshwara Nagar",
+   "straight_line_km": 1.16,
+   "median_min": 14.2,
+   "population": 35814,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "172-Madivala",
+   "straight_line_km": 1.26,
+   "median_min": 14.23,
+   "population": 42624,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "166-Karisandra",
+   "straight_line_km": 1.14,
+   "median_min": 14.3,
+   "population": 27040,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "44-Marappana Palya",
+   "straight_line_km": 1.29,
+   "median_min": 14.39,
+   "population": 40212,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "67-Nagapura",
+   "straight_line_km": 1.55,
+   "median_min": 14.4,
+   "population": 34574,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "94-Gandhinagar",
+   "straight_line_km": 1.18,
+   "median_min": 14.69,
+   "population": 31208,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "32-Kaval Bairasandra",
+   "straight_line_km": 1.18,
+   "median_min": 14.81,
+   "population": 39334,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "52-K R Puram",
+   "straight_line_km": 1.29,
+   "median_min": 14.84,
+   "population": 35168,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "55-Devasandra",
+   "straight_line_km": 1.21,
+   "median_min": 14.98,
+   "population": 33946,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "58-New Tippasandara",
+   "straight_line_km": 1.2,
+   "median_min": 14.98,
+   "population": 43983,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "24-HBR Layout",
+   "straight_line_km": 1.33,
+   "median_min": 15.0,
+   "population": 58967,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "176-BTM Layout",
+   "straight_line_km": 1.35,
+   "median_min": 15.2,
+   "population": 52250,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "142-Sunkenahalli",
+   "straight_line_km": 1.24,
+   "median_min": 15.51,
+   "population": 34666,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "141-Azad Nagar",
+   "straight_line_km": 1.26,
+   "median_min": 15.74,
+   "population": 38825,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "93-Vasanth Nagar",
+   "straight_line_km": 1.27,
+   "median_min": 15.81,
+   "population": 22815,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "14-Bagalakunte",
+   "straight_line_km": 1.45,
+   "median_min": 15.9,
+   "population": 65113,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "38-HMT Ward",
+   "straight_line_km": 1.64,
+   "median_min": 15.99,
+   "population": 36879,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "35-Aramane Nagara",
+   "straight_line_km": 1.33,
+   "median_min": 16.02,
+   "population": 36738,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "45-Malleswaram",
+   "straight_line_km": 1.56,
+   "median_min": 16.05,
+   "population": 34196,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "57-C V Raman Nagar",
+   "straight_line_km": 1.29,
+   "median_min": 16.09,
+   "population": 58815,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "179-Shakambari Nagar",
+   "straight_line_km": 1.42,
+   "median_min": 16.15,
+   "population": 25871,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "29-Kacharkanahalli",
+   "straight_line_km": 1.37,
+   "median_min": 16.29,
+   "population": 33588,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "163-Katriguppe",
+   "straight_line_km": 1.31,
+   "median_min": 16.34,
+   "population": 45572,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "17-J P Park",
+   "straight_line_km": 1.31,
+   "median_min": 16.4,
+   "population": 49610,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "7-Byatarayanapura",
+   "straight_line_km": 1.53,
+   "median_min": 16.53,
+   "population": 72154,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "81-Vijnana Nagar",
+   "straight_line_km": 1.32,
+   "median_min": 16.53,
+   "population": 57062,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "60-Sagayarapuram",
+   "straight_line_km": 1.68,
+   "median_min": 16.87,
+   "population": 35334,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "101-Kamakshipalya",
+   "straight_line_km": 1.48,
+   "median_min": 16.97,
+   "population": 30051,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "64-Rajamahal Guttahalli",
+   "straight_line_km": 1.38,
+   "median_min": 17.26,
+   "population": 31118,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "66-Subramanya Nagar",
+   "straight_line_km": 1.46,
+   "median_min": 17.76,
+   "population": 35709,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "147-Adugodi",
+   "straight_line_km": 1.47,
+   "median_min": 18.32,
+   "population": 34299,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "4-Yelahanka Satellite Town",
+   "straight_line_km": 1.78,
+   "median_min": 18.41,
+   "population": 41986,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "78-Pulikeshinagar",
+   "straight_line_km": 1.51,
+   "median_min": 18.45,
+   "population": 28835,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "43-Nandini Layout",
+   "straight_line_km": 1.84,
+   "median_min": 18.55,
+   "population": 51200,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "173-Jakkasandra",
+   "straight_line_km": 1.54,
+   "median_min": 18.73,
+   "population": 33521,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "126-Maruthi Mandir ward",
+   "straight_line_km": 1.99,
+   "median_min": 18.78,
+   "population": 29319,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "19-Sanjaya Nagar",
+   "straight_line_km": 1.5,
+   "median_min": 18.78,
+   "population": 32491,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "134-Bapuji Nagar",
+   "straight_line_km": 1.52,
+   "median_min": 19.03,
+   "population": 49484,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "61-S K Garden",
+   "straight_line_km": 1.85,
+   "median_min": 19.1,
+   "population": 38050,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "8-Kodigehalli",
+   "straight_line_km": 1.53,
+   "median_min": 19.15,
+   "population": 47546,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "112-Domlur",
+   "straight_line_km": 1.56,
+   "median_min": 19.23,
+   "population": 30638,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "127-Mudalapalya",
+   "straight_line_km": 2.53,
+   "median_min": 19.35,
+   "population": 43729,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "20-Ganga Nagar",
+   "straight_line_km": 1.7,
+   "median_min": 19.39,
+   "population": 27361,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "49-Lingarajapura",
+   "straight_line_km": 1.56,
+   "median_min": 19.53,
+   "population": 37955,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "178-Sarakki",
+   "straight_line_km": 1.57,
+   "median_min": 19.61,
+   "population": 31034,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "117-Shanthi Nagar",
+   "straight_line_km": 1.61,
+   "median_min": 19.77,
+   "population": 42095,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "79-Sarvagna Nagar",
+   "straight_line_km": 1.59,
+   "median_min": 19.82,
+   "population": 37291,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "133-Hampi Nagar",
+   "straight_line_km": 1.89,
+   "median_min": 20.14,
+   "population": 35113,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "186-Jaraganahalli",
+   "straight_line_km": 1.62,
+   "median_min": 20.23,
+   "population": 38294,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "21-Hebbala",
+   "straight_line_km": 2.15,
+   "median_min": 20.26,
+   "population": 32516,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "82-Garudachar Playa",
+   "straight_line_km": 1.64,
+   "median_min": 20.27,
+   "population": 49631,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "62-Ramaswamy Palya",
+   "straight_line_km": 1.64,
+   "median_min": 20.56,
+   "population": 34394,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "88-Jeevanbhima Nagar",
+   "straight_line_km": 1.67,
+   "median_min": 20.82,
+   "population": 38251,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "103-Kaveripura",
+   "straight_line_km": 2.04,
+   "median_min": 21.06,
+   "population": 53532,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "15-T Dasarahalli",
+   "straight_line_km": 2.98,
+   "median_min": 21.46,
+   "population": 33042,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "148-Ejipura",
+   "straight_line_km": 1.72,
+   "median_min": 21.52,
+   "population": 47004,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "22-Vishwanath Nagenahalli",
+   "straight_line_km": 1.77,
+   "median_min": 22.11,
+   "population": 51592,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "161-Hosakerehalli",
+   "straight_line_km": 2.18,
+   "median_min": 22.27,
+   "population": 46805,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "56-A Narayanapura",
+   "straight_line_km": 2.22,
+   "median_min": 22.31,
+   "population": 43443,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "155-Hanumanth Nagar",
+   "straight_line_km": 1.81,
+   "median_min": 22.37,
+   "population": 36982,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "1-Kempegowda Ward",
+   "straight_line_km": 2.1,
+   "median_min": 22.4,
+   "population": 34783,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "28-Kammanahalli",
+   "straight_line_km": 1.8,
+   "median_min": 22.48,
+   "population": 47074,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "47-Devara Jeevanahalli",
+   "straight_line_km": 1.8,
+   "median_min": 22.56,
+   "population": 42135,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "69-Laggere",
+   "straight_line_km": 2.95,
+   "median_min": 22.93,
+   "population": 57077,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "132-Attiguppe",
+   "straight_line_km": 2.56,
+   "median_min": 22.97,
+   "population": 41487,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "51-Vijnanapura",
+   "straight_line_km": 2.35,
+   "median_min": 23.13,
+   "population": 46159,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "157-Gali Anjenaya Temple ward",
+   "straight_line_km": 2.08,
+   "median_min": 23.35,
+   "population": 34653,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "68-Mahalakshimpuram",
+   "straight_line_km": 2.05,
+   "median_min": 23.7,
+   "population": 44615,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "50-Benniganahalli",
+   "straight_line_km": 2.11,
+   "median_min": 23.9,
+   "population": 49094,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "5-Jakkuru",
+   "straight_line_km": 2.16,
+   "median_min": 24.01,
+   "population": 52025,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "198-Hemmigepura",
+   "straight_line_km": 2.06,
+   "median_min": 24.6,
+   "population": 50440,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "34-Gangenahalli",
+   "straight_line_km": 2.31,
+   "median_min": 24.68,
+   "population": 24308,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "75-Shankar Matt",
+   "straight_line_km": 1.99,
+   "median_min": 24.82,
+   "population": 48734,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "53-Basavanapura",
+   "straight_line_km": 2.28,
+   "median_min": 24.94,
+   "population": 48585,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "102-Vrisabhavathi Nagar",
+   "straight_line_km": 2.31,
+   "median_min": 24.95,
+   "population": 50893,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "158-Deepanjali Nagar",
+   "straight_line_km": 3.06,
+   "median_min": 25.86,
+   "population": 45928,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "156-Srinagar",
+   "straight_line_km": 2.0,
+   "median_min": 26.72,
+   "population": 41379,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "6-Thanisandra",
+   "straight_line_km": 2.34,
+   "median_min": 27.49,
+   "population": 71855,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "74-Shakthi Ganapathi Nagar",
+   "straight_line_km": 2.32,
+   "median_min": 28.03,
+   "population": 43844,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "12-Shettihalli",
+   "straight_line_km": 2.25,
+   "median_min": 28.13,
+   "population": 61071,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "162-Girinagar",
+   "straight_line_km": 2.19,
+   "median_min": 28.47,
+   "population": 43195,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "46-Jayachamarajendra  Nagar",
+   "straight_line_km": 2.24,
+   "median_min": 29.81,
+   "population": 31449,
+   "band_colour": "#2e8b7a"
+  },
+  {
+   "ward_label": "10-Dodda Bommasandra",
+   "straight_line_km": 3.0,
+   "median_min": 30.4,
+   "population": 36396,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "59-Maruthi Seva Nagar",
+   "straight_line_km": 2.35,
+   "median_min": 31.39,
+   "population": 40362,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "85-Dodda Nekkundi",
+   "straight_line_km": 2.34,
+   "median_min": 31.47,
+   "population": 63083,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "128-Nagarabhavi",
+   "straight_line_km": 3.54,
+   "median_min": 32.2,
+   "population": 35780,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "2-Chowdeswari Ward",
+   "straight_line_km": 2.91,
+   "median_min": 33.08,
+   "population": 36602,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "33-Manorayanapalya",
+   "straight_line_km": 2.44,
+   "median_min": 33.42,
+   "population": 47926,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "73-Kottegepalya",
+   "straight_line_km": 3.4,
+   "median_min": 33.55,
+   "population": 68922,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "130-Ullalu",
+   "straight_line_km": 3.83,
+   "median_min": 34.1,
+   "population": 58199,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "114-Agaram",
+   "straight_line_km": 2.49,
+   "median_min": 34.35,
+   "population": 36916,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "115-Vannarpet",
+   "straight_line_km": 2.32,
+   "median_min": 34.95,
+   "population": 37060,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "116-Nilasandra",
+   "straight_line_km": 2.25,
+   "median_min": 34.95,
+   "population": 48534,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "131-Nayandahalli",
+   "straight_line_km": 4.27,
+   "median_min": 35.3,
+   "population": 42785,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "189-Hongasandra",
+   "straight_line_km": 3.67,
+   "median_min": 35.95,
+   "population": 68554,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "25-Horamavu",
+   "straight_line_km": 2.28,
+   "median_min": 36.67,
+   "population": 95368,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "39-Chokkasandra",
+   "straight_line_km": 3.3,
+   "median_min": 37.15,
+   "population": 59289,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "16-Jalahalli",
+   "straight_line_km": 2.33,
+   "median_min": 38.58,
+   "population": 37959,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "9-Vidyaranyapura",
+   "straight_line_km": 3.07,
+   "median_min": 39.09,
+   "population": 57195,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "26-Ramamurthy Nagar",
+   "straight_line_km": 2.99,
+   "median_min": 39.24,
+   "population": 47358,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "71-Hegganahalli",
+   "straight_line_km": 4.97,
+   "median_min": 40.06,
+   "population": 66314,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "87-HAL Airport",
+   "straight_line_km": 2.18,
+   "median_min": 40.3,
+   "population": 39926,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "113-Konena Agrahara",
+   "straight_line_km": 2.58,
+   "median_min": 40.38,
+   "population": 38108,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "174-HSR Layout",
+   "straight_line_km": 3.42,
+   "median_min": 40.49,
+   "population": 63033,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "188-Bilekhalli",
+   "straight_line_km": 2.49,
+   "median_min": 41.44,
+   "population": 49884,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "41-Peenya Industrial Area",
+   "straight_line_km": 3.92,
+   "median_min": 41.46,
+   "population": 57814,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "197-Vasanthpura",
+   "straight_line_km": 2.23,
+   "median_min": 41.58,
+   "population": 62057,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "187-Puttenahalli",
+   "straight_line_km": 2.35,
+   "median_min": 41.83,
+   "population": 49207,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "160-Rajarajeshwari Nagar",
+   "straight_line_km": 3.11,
+   "median_min": 42.34,
+   "population": 56897,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "129-Jnana Bharathi ward",
+   "straight_line_km": 4.59,
+   "median_min": 42.95,
+   "population": 68132,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "3-Atturu",
+   "straight_line_km": 3.86,
+   "median_min": 43.42,
+   "population": 58129,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "13-Mallasandra",
+   "straight_line_km": 2.19,
+   "median_min": 43.55,
+   "population": 41482,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "54-Hudi",
+   "straight_line_km": 3.07,
+   "median_min": 44.42,
+   "population": 50191,
+   "band_colour": "#e8c468"
+  },
+  {
+   "ward_label": "175-Bommanahalli",
+   "straight_line_km": 2.88,
+   "median_min": 45.22,
+   "population": 43585,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "11-Kuvempu Nagar",
+   "straight_line_km": 4.02,
+   "median_min": 45.85,
+   "population": 37128,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "184-Uttarahalli",
+   "straight_line_km": 2.93,
+   "median_min": 46.82,
+   "population": 57209,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "72-Herohalli",
+   "straight_line_km": 6.04,
+   "median_min": 46.96,
+   "population": 62272,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "193-Arakere",
+   "straight_line_km": 4.44,
+   "median_min": 47.56,
+   "population": 58355,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "84-Hagadur",
+   "straight_line_km": 2.64,
+   "median_min": 48.61,
+   "population": 50556,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "195-Konankunte",
+   "straight_line_km": 3.03,
+   "median_min": 51.76,
+   "population": 57335,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "70-Rajagopal Nagar",
+   "straight_line_km": 4.06,
+   "median_min": 51.81,
+   "population": 61479,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "83-Kadugodi",
+   "straight_line_km": 3.42,
+   "median_min": 52.57,
+   "population": 43942,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "40-Dodda Bidarakallu",
+   "straight_line_km": 5.68,
+   "median_min": 53.7,
+   "population": 72794,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "194-Gottigere",
+   "straight_line_km": 5.61,
+   "median_min": 54.54,
+   "population": 51911,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "192-Begur",
+   "straight_line_km": 6.69,
+   "median_min": 57.64,
+   "population": 80037,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "190-Mangammanapalya",
+   "straight_line_km": 4.47,
+   "median_min": 59.33,
+   "population": 65890,
+   "band_colour": "#e08a4a"
+  },
+  {
+   "ward_label": "196-Anjanapura",
+   "straight_line_km": 5.63,
+   "median_min": 66.26,
+   "population": 45608,
+   "band_colour": "#c0392b"
+  },
+  {
+   "ward_label": "191-Singasandra",
+   "straight_line_km": 6.76,
+   "median_min": 70.38,
+   "population": 71004,
+   "band_colour": "#c0392b"
+  },
+  {
+   "ward_label": "86-Marathahalli",
+   "straight_line_km": 3.23,
+   "median_min": 71.07,
+   "population": 39768,
+   "band_colour": "#c0392b"
+  },
+  {
+   "ward_label": "150-Bellanduru",
+   "straight_line_km": 5.49,
+   "median_min": 77.2,
+   "population": 80180,
+   "band_colour": "#c0392b"
+  },
+  {
+   "ward_label": "149-Varthuru",
+   "straight_line_km": 5.08,
+   "median_min": 102.66,
+   "population": 54625,
+   "band_colour": "#c0392b"
+  }
+ ],
+ "sensitivity": [
+  {
+   "label": "Headline: 500 m walk, every route, every hospital",
+   "population_over_45": 1033678,
+   "wards_over_45": 18,
+   "city_median": 18.4
+  },
+  {
+   "label": "Walk up to 800 m to a stop",
+   "population_over_45": 564050,
+   "wards_over_45": 9,
+   "city_median": 18.4
+  },
+  {
+   "label": "Only routes every 30 min or better",
+   "population_over_45": 1585268,
+   "wards_over_45": 28,
+   "city_median": 18.4
+  },
+  {
+   "label": "Only hospitals treating more than one illness",
+   "population_over_45": 1132769,
+   "wards_over_45": 20,
+   "city_median": 18.8
+  },
+  {
+   "label": "No changing buses",
+   "population_over_45": 1033678,
+   "wards_over_45": 18,
+   "city_median": 18.4
+  }
+ ],
+ "facility_mix": [
+  {
+   "type": "Tertiary centre",
+   "count": 16
+  },
+  {
+   "type": "District hospital",
+   "count": 10
+  },
+  {
+   "type": "Teaching hospital",
+   "count": 10
+  },
+  {
+   "type": "Community health centre",
+   "count": 9
+  },
+  {
+   "type": "Specialty hospital",
+   "count": 4
+  },
+  {
+   "type": "Taluk hospital",
+   "count": 2
+  }
+ ]
+}

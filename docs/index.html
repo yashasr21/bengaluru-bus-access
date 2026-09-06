@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reaching a hospital by bus in Bengaluru</title>
+<meta name="description" content="How long it takes to reach a hospital by BMTC bus from each of Bengaluru's 198 wards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,700;0,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#070C22;
+  --navy:#0E1740;
+  --oxblood:#3E0F1E;
+  --ember:#C0392B;
+  --emberlight:#E8654F;
+  --paper:#EEF1FA;
+  --muted:#9AA4C6;
+  --line:rgba(238,241,250,.14);
+  --band1:#2E8B7A;
+  --band2:#E8C468;
+  --band3:#E08A4A;
+  --band4:#C0392B;
+  --band5:#4A4A55;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(1100px 700px at 82% -6%, rgba(192,57,43,.42), transparent 62%),
+    radial-gradient(900px 620px at 8% 8%, rgba(62,15,30,.55), transparent 60%),
+    linear-gradient(168deg, var(--ink) 0%, var(--navy) 44%, #16113A 74%, var(--oxblood) 100%);
+  background-attachment:fixed;
+  color:var(--paper);
+  font-family:"Newsreader",Georgia,serif;
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+h1,h2,h3,.blk,.stat b,.tbl th,.chip{font-family:"Archivo",system-ui,sans-serif}
+.blk{text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+
+/* ---------- masthead ---------- */
+header{padding:46px 0 0}
+.rule{height:3px;background:linear-gradient(90deg,var(--ember),var(--emberlight) 28%,transparent 78%)}
+.masthead{display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;
+  padding:16px 0 0;font-size:12px;color:var(--muted)}
+.masthead .blk{font-size:12px;color:var(--paper)}
+
+.hero{padding:34px 0 56px;position:relative;overflow:hidden}
+h1{
+  font-size:clamp(2.5rem,7.4vw,5.6rem);
+  line-height:.92;margin:8px 0 0;font-weight:800;
+  text-transform:uppercase;letter-spacing:-.015em;
+  text-shadow:0 2px 0 rgba(0,0,0,.35), 0 22px 48px rgba(0,0,0,.45);
+}
+h1 span{display:block}
+h1 .thin{font-weight:400;color:var(--muted);letter-spacing:.02em;font-size:.42em;
+  text-transform:none;font-family:"Newsreader",serif;margin-top:18px;max-width:34ch;line-height:1.45}
+.routeline{position:absolute;right:-40px;top:40px;width:52%;max-width:560px;opacity:.5;pointer-events:none}
+.routeline path{fill:none;stroke:var(--emberlight);stroke-width:2.2;stroke-linecap:round}
+.routeline .dashed{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 3.4s ease-out .4s forwards}
+.routeline circle{fill:var(--paper);opacity:0;animation:pop .5s ease-out forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:.9}}
+
+/* ---------- big number ---------- */
+.headline{
+  margin:38px 0 0;padding:30px 32px;border-radius:2px;
+  background:linear-gradient(120deg, rgba(192,57,43,.24), rgba(14,23,64,.5));
+  border-left:6px solid var(--ember);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07), 0 26px 60px rgba(0,0,0,.4);
+  display:flex;gap:34px;align-items:center;flex-wrap:wrap;
+}
+.bignum{font-family:"Archivo";font-weight:800;font-size:clamp(3rem,9vw,5.4rem);
+  line-height:.88;font-variant-numeric:tabular-nums;
+  background:linear-gradient(180deg,#fff,#F3B9AE);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 0 rgba(0,0,0,.3));}
+.headline p{margin:0;max-width:36ch;font-size:1.05rem}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px;
+  margin:2px 0 0;background:var(--line)}
+.stat{background:rgba(7,12,34,.55);padding:22px 20px}
+.stat b{display:block;font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{display:block;font-size:.9rem;color:var(--muted);margin-top:4px}
+
+section{padding:64px 0 0}
+h2{font-size:clamp(1.5rem,3.2vw,2.2rem);text-transform:uppercase;letter-spacing:.02em;
+  font-weight:800;margin:0 0 6px;line-height:1.06}
+h2::after{content:"";display:block;width:64px;height:3px;background:var(--ember);margin-top:14px}
+.lede{color:var(--muted);max-width:66ch;margin:18px 0 26px;font-size:1.06rem}
+p{max-width:70ch}
+
+/* ---------- band ladder ---------- */
+.ladder{display:grid;gap:10px;margin-top:8px}
+.rung{display:grid;grid-template-columns:158px 1fr;gap:16px;align-items:center}
+.rung .name{font-family:"Archivo";font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--paper);text-align:right}
+.bar{height:44px;background:rgba(255,255,255,.05);position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;width:0;transition:width 1.3s cubic-bezier(.2,.7,.2,1)}
+.bar em{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-style:normal;
+  font-family:"Archivo";font-size:.86rem;font-weight:600;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* ---------- tables ---------- */
+.tbl{width:100%;border-collapse:collapse;margin-top:10px;font-size:.98rem}
+.tbl th{font-size:.74rem;text-transform:uppercase;letter-spacing:.11em;font-weight:700;
+  text-align:right;color:var(--muted);padding:0 12px 10px;border-bottom:1px solid var(--line)}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl td{padding:11px 12px;border-bottom:1px solid rgba(238,241,250,.07);
+  font-variant-numeric:tabular-nums;text-align:right}
+.tbl tbody tr:hover{background:rgba(192,57,43,.14)}
+.tbl td.ward{font-family:"Archivo";font-weight:600;letter-spacing:.01em}
+.dot{display:inline-block;width:9px;height:9px;margin-right:9px;vertical-align:1px;border-radius:50%}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+
+/* ---------- map ---------- */
+.mapframe{margin-top:12px;border:1px solid var(--line);height:560px;background:#0b1130}
+.mapframe iframe{width:100%;height:100%;border:0;display:block}
+.chip{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  font-weight:700;padding:7px 13px;border:1px solid var(--line);color:var(--paper);
+  text-decoration:none;margin:14px 8px 0 0;background:rgba(255,255,255,.04)}
+.chip:hover{background:var(--ember);border-color:var(--ember)}
+
+/* ---------- scatter ---------- */
+.scatter{width:100%;height:420px;margin-top:14px;display:block}
+.scatter text{font-family:"Archivo";font-size:11px;fill:var(--muted)}
+.scatter .grid{stroke:rgba(238,241,250,.1);stroke-width:1}
+.scatter circle{opacity:.82}
+.scatter circle:hover{stroke:#fff;stroke-width:2}
+
+/* ---------- notes ---------- */
+.limits{border-top:1px solid var(--line);margin-top:16px}
+.limits div{padding:20px 0;border-bottom:1px solid rgba(238,241,250,.07);
+  display:grid;grid-template-columns:210px 1fr;gap:24px}
+.limits h3{margin:0;font-size:.82rem;text-transform:uppercase;letter-spacing:.11em;
+  font-weight:700;color:var(--emberlight)}
+.limits p{margin:0;color:var(--muted)}
+
+footer{margin-top:78px;padding:34px 0 60px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:.92rem}
+footer a{color:var(--paper)}
+
+@media (max-width:820px){
+  .two{grid-template-columns:1fr;gap:34px}
+  .rung{grid-template-columns:96px 1fr}
+  .rung .name{font-size:.7rem}
+  .limits div{grid-template-columns:1fr;gap:6px}
+  .routeline{display:none}
+  .headline{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .routeline .dashed{stroke-dashoffset:0}
+  .routeline circle{opacity:.9}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="rule"></div>
+  <div class="masthead">
+    <span class="blk">Bengaluru bus access &middot; ward analysis</span>
+    <span>BMTC timetable 12 July 2026 &nbsp;|&nbsp; BBMP wards, Census 2011 &nbsp;|&nbsp; Karnataka health GIS</span>
+  </div>
+
+  <div class="hero">
+    <svg class="routeline" viewBox="0 0 560 300" aria-hidden="true">
+      <path class="dashed" d="M10 250 C 90 250, 120 170, 190 168 S 300 190, 350 120 S 440 70, 548 52"/>
+      <circle cx="10" cy="250" r="6" style="animation-delay:.6s"/>
+      <circle cx="190" cy="168" r="5" style="animation-delay:1.5s"/>
+      <circle cx="350" cy="120" r="5" style="animation-delay:2.4s"/>
+      <circle cx="548" cy="52" r="7" style="animation-delay:3.2s"/>
+    </svg>
+    <h1>
+      <span>Five kilometres.</span>
+      <span>One hundred</span>
+      <span>minutes.</span>
+      <span class="thin">That is Varthur ward on the eastern edge of Bengaluru: 54,625 people,
+      five kilometres from the nearest hospital, and a typical bus journey of an hour and forty
+      minutes to reach it. Access to healthcare is not only about how many hospitals a city has.
+      It is about whether people can get to one.</span>
+    </h1>
+
+    <div class="headline">
+      <div class="bignum" data-count="1033678">0</div>
+      <p>people live in a ward where the typical bus journey to a hospital
+      takes <b>45 minutes or more</b>. That is 12.2 per cent of Bengaluru,
+      spread across 18 wards on the eastern and southern edges of the city.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b data-count="198">0</b><span>BBMP wards measured</span></div>
+      <div class="stat"><b data-count="51">0</b><span>hospital sites</span></div>
+      <div class="stat"><b data-count="9681">0</b><span>BMTC bus stops</span></div>
+      <div class="stat"><b>18 min</b><span>typical journey, citywide</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="finding">
+  <h2>Where the city stands</h2>
+  <p class="lede">Every ward is covered with sample points 250 metres apart. Each point is routed
+  to the nearest hospital on foot and by bus, and the ward keeps the median of its points, so the
+  figure describes a typical resident rather than the luckiest corner.</p>
+  <div class="ladder" id="ladder"></div>
+</section>
+
+<section id="map">
+  <h2>The map</h2>
+  <p class="lede">Green in the middle, red at the edges. The pattern follows the city's growth:
+  the hospitals sit where Bengaluru was in 1990, and the wards added since are the ones waiting
+  for a bus.</p>
+  <div class="mapframe"><iframe src="map.html" title="Ward journey times to hospitals" loading="lazy"></iframe></div>
+  <a class="chip" href="map.html">Open the full map</a>
+  <a class="chip" href="https://github.com/yashasr21/bengaluru-bus-access">Code and data</a>
+</section>
+
+<section id="wards">
+  <div class="two">
+    <div>
+      <h2>Worst served</h2>
+      <p class="lede">Ranked by the typical journey from inside the ward.</p>
+      <table class="tbl"><thead><tr><th>Ward</th><th>Minutes</th><th>People</th><th>Km away</th></tr></thead>
+      <tbody id="worst"></tbody></table>
+    </div>
+    <div>
+      <h2>Close, but slow</h2>
+      <p class="lede">Wards within four kilometres of a hospital where the bus still takes far
+      longer than the distance suggests. These are route problems, not hospital problems.</p>
+      <table class="tbl"><thead><tr><th>Ward</th><th>Minutes</th><th>Km away</th><th>Bus vs crow</th></tr></thead>
+      <tbody id="slow"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<section id="scatter">
+  <h2>Distance is not the story</h2>
+  <p class="lede">Each dot is a ward: how far the nearest hospital is against how long the bus
+  takes. If distance explained everything the dots would sit on a line. The ones high above it
+  are wards the network has left behind.</p>
+  <svg class="scatter" id="plot" viewBox="0 0 900 420" preserveAspectRatio="xMidYMid meet"></svg>
+</section>
+
+<section id="sensitivity">
+  <h2>How much the answer moves</h2>
+  <p class="lede">The headline rests on four assumptions. Changing each one, and leaving the rest
+  alone, gives the numbers below. The finding survives all of them; it gets worse when you insist
+  on a bus that actually turns up.</p>
+  <table class="tbl"><thead><tr><th>Assumption</th><th>People over 45 min</th><th>Wards</th></tr></thead>
+  <tbody id="sens"></tbody></table>
+</section>
+
+<section id="limits">
+  <h2>What this cannot tell you</h2>
+  <p class="lede">Four things are wrong with these numbers, and they are worth stating plainly
+  because they all push in the same direction: the real journey is worse than the one modelled here.</p>
+  <div class="limits">
+    <div><h3>Scheduled, not real</h3><p>The times come from BMTC's published timetable. Bengaluru
+    traffic is not in the data, so a journey shown as 40 minutes at 9 a.m. is optimistic.</p></div>
+    <div><h3>Straight-line walking</h3><p>Walking distance is measured as a circle around each stop,
+    not along the road network. Lakes, railway lines and roads without footpaths all make the real
+    walk longer.</p></div>
+    <div><h3>Public hospitals mostly</h3><p>The facility list comes from the Karnataka health GIS.
+    It covers government hospitals and empanelled tertiary centres, and misses much of the private
+    sector, which matters more in some wards than others.</p></div>
+    <div><h3>Population spread evenly</h3><p>Ward population is assumed to be spread evenly across
+    the ward. In a ward like Varthur it is not: people cluster along the main roads, which are also
+    where the buses are.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>Built from three open datasets: the unofficial BMTC GTFS feed published 12 July 2026,
+  the BBMP 2022 delimitation ward layer carrying Census 2011 population, and the Karnataka
+  health department's facility layers. Method, code and the full ward table are in the
+  <a href="https://github.com/yashasr21/bengaluru-bus-access">repository</a>.</p>
+</footer>
+
+</div>
+<script>
+const DATA = {"generated_from":{"gtfs":"BMTC unofficial GTFS, feed version 20260712","wards":"BBMP 2022 delimitation ward layer, Census 2011 population","hospitals":"Karnataka health GIS facility layers"},"headline":{"population":8443675,"wards":198,"hospitals":51,"stops":9681,"routes":4264,"trips":56442,"city_median_min":18.4,"pop_under_30":5790535,"pop_over_45":1033678,"pop_over_60":291185,"wards_over_45":18,"stops_near_hospital":325,"share_stops_needing_change":30.2,"frequent_patterns_share":6.6},"bands":[{"band":"Under 30 min","wards":149,"population":5790535,"share":68.6,"colour":"#2e8b7a"},{"band":"30 to 45 min","wards":31,"population":1619462,"share":19.2,"colour":"#e8c468"},{"band":"45 to 60 min","wards":13,"population":742493,"share":8.8,"colour":"#e08a4a"},{"band":"Over 60 min","wards":5,"population":291185,"share":3.4,"colour":"#c0392b"}],"worst":[{"ward_label":"149-Varthuru","median_min":102.7,"population":54625,"straight_line_km":5.1},{"ward_label":"150-Bellanduru","median_min":77.2,"population":80180,"straight_line_km":5.5},{"ward_label":"86-Marathahalli","median_min":71.1,"population":39768,"straight_line_km":3.2},{"ward_label":"191-Singasandra","median_min":70.4,"population":71004,"straight_line_km":6.8},{"ward_label":"196-Anjanapura","median_min":66.3,"population":45608,"straight_line_km":5.6},{"ward_label":"190-Mangammanapalya","median_min":59.3,"population":65890,"straight_line_km":4.5},{"ward_label":"192-Begur","median_min":57.6,"population":80037,"straight_line_km":6.7},{"ward_label":"194-Gottigere","median_min":54.5,"population":51911,"straight_line_km":5.6},{"ward_label":"40-Dodda Bidarakallu","median_min":53.7,"population":72794,"straight_line_km":5.7},{"ward_label":"83-Kadugodi","median_min":52.6,"population":43942,"straight_line_km":3.4},{"ward_label":"70-Rajagopal Nagar","median_min":51.8,"population":61479,"straight_line_km":4.1},{"ward_label":"195-Konankunte","median_min":51.8,"population":57335,"straight_line_km":3.0}],"best":[{"ward_label":"139-K R Market","median_min":3.0,"population":29344,"straight_line_km":0.2},{"ward_label":"97-Dayananda Nagar","median_min":3.2,"population":35721,"straight_line_km":0.3},{"ward_label":"92-Shivaji Nagar","median_min":3.3,"population":37506,"straight_line_km":0.3},{"ward_label":"169-Byrasandra","median_min":3.6,"population":32066,"straight_line_km":0.3},{"ward_label":"137-Rayapuram","median_min":4.6,"population":36039,"straight_line_km":0.4},{"ward_label":"153-Jayanagar","median_min":5.0,"population":38151,"straight_line_km":0.4},{"ward_label":"165-Ganesh Mandir ward","median_min":5.5,"population":25998,"straight_line_km":0.4},{"ward_label":"107-Shivanagara","median_min":5.7,"population":36461,"straight_line_km":0.5},{"ward_label":"99-Rajaji Nagar","median_min":6.0,"population":33084,"straight_line_km":0.5},{"ward_label":"170-Jayanagar East","median_min":6.2,"population":33927,"straight_line_km":0.5},{"ward_label":"182-Padmanabha Nagar","median_min":6.5,"population":41037,"straight_line_km":0.5},{"ward_label":"105-Agrahara Dasarahalli","median_min":6.6,"population":28355,"straight_line_km":0.5}],"close_but_slow":[{"ward_label":"86-Marathahalli","median_min":71.1,"straight_line_km":3.2,"penalty_ratio":1.8,"population":39768},{"ward_label":"13-Mallasandra","median_min":43.6,"straight_line_km":2.2,"penalty_ratio":1.6,"population":41482},{"ward_label":"197-Vasanthpura","median_min":41.6,"straight_line_km":2.2,"penalty_ratio":1.5,"population":62057},{"ward_label":"87-HAL Airport","median_min":40.3,"straight_line_km":2.2,"penalty_ratio":1.5,"population":39926},{"ward_label":"84-Hagadur","median_min":48.6,"straight_line_km":2.6,"penalty_ratio":1.5,"population":50556},{"ward_label":"187-Puttenahalli","median_min":41.8,"straight_line_km":2.3,"penalty_ratio":1.4,"population":49207},{"ward_label":"195-Konankunte","median_min":51.8,"straight_line_km":3.0,"penalty_ratio":1.4,"population":57335},{"ward_label":"188-Bilekhalli","median_min":41.4,"straight_line_km":2.5,"penalty_ratio":1.3,"population":49884},{"ward_label":"16-Jalahalli","median_min":38.6,"straight_line_km":2.3,"penalty_ratio":1.3,"population":37959},{"ward_label":"25-Horamavu","median_min":36.7,"straight_line_km":2.3,"penalty_ratio":1.3,"population":95368}],"far_but_fine":[{"ward_label":"131-Nayandahalli","median_min":35.3,"straight_line_km":4.3,"population":42785},{"ward_label":"71-Hegganahalli","median_min":40.1,"straight_line_km":5.0,"population":66314},{"ward_label":"129-Jnana Bharathi ward","median_min":43.0,"straight_line_km":4.6,"population":68132},{"ward_label":"11-Kuvempu Nagar","median_min":45.9,"straight_line_km":4.0,"population":37128},{"ward_label":"72-Herohalli","median_min":47.0,"straight_line_km":6.0,"population":62272},{"ward_label":"193-Arakere","median_min":47.6,"straight_line_km":4.4,"population":58355},{"ward_label":"70-Rajagopal Nagar","median_min":51.8,"straight_line_km":4.1,"population":61479},{"ward_label":"40-Dodda Bidarakallu","median_min":53.7,"straight_line_km":5.7,"population":72794},{"ward_label":"194-Gottigere","median_min":54.5,"straight_line_km":5.6,"population":51911},{"ward_label":"192-Begur","median_min":57.6,"straight_line_km":6.7,"population":80037}],"scatter":[{"ward_label":"139-K R Market","straight_line_km":0.24,"median_min":3.04,"population":29344,"band_colour":"#2e8b7a"},{"ward_label":"97-Dayananda Nagar","straight_line_km":0.26,"median_min":3.25,"population":35721,"band_colour":"#2e8b7a"},{"ward_label":"92-Shivaji Nagar","straight_line_km":0.26,"median_min":3.29,"population":37506,"band_colour":"#2e8b7a"},{"ward_label":"169-Byrasandra","straight_line_km":0.29,"median_min":3.56,"population":32066,"band_colour":"#2e8b7a"},{"ward_label":"137-Rayapuram","straight_line_km":0.37,"median_min":4.61,"population":36039,"band_colour":"#2e8b7a"},{"ward_label":"153-Jayanagar","straight_line_km":0.4,"median_min":4.95,"population":38151,"band_colour":"#2e8b7a"},{"ward_label":"165-Ganesh Mandir ward","straight_line_km":0.44,"median_min":5.5,"population":25998,"band_colour":"#2e8b7a"},{"ward_label":"107-Shivanagara","straight_line_km":0.46,"median_min":5.68,"population":36461,"band_colour":"#2e8b7a"},{"ward_label":"99-Rajaji Nagar","straight_line_km":0.48,"median_min":6.05,"population":33084,"band_colour":"#2e8b7a"},{"ward_label":"170-Jayanagar East","straight_line_km":0.5,"median_min":6.24,"population":33927,"band_colour":"#2e8b7a"},{"ward_label":"182-Padmanabha Nagar","straight_line_km":0.52,"median_min":6.51,"population":41037,"band_colour":"#2e8b7a"},{"ward_label":"105-Agrahara Dasarahalli","straight_line_km":0.53,"median_min":6.55,"population":28355,"band_colour":"#2e8b7a"},{"ward_label":"96-Okalipuram","straight_line_km":0.54,"median_min":6.78,"population":38110,"band_colour":"#2e8b7a"},{"ward_label":"119-Dharmaraya Swamy Temple wa","straight_line_km":0.55,"median_min":6.88,"population":27076,"band_colour":"#2e8b7a"},{"ward_label":"89-Jogupalya","straight_line_km":0.55,"median_min":6.91,"population":33793,"band_colour":"#2e8b7a"},{"ward_label":"120-Cottonpete","straight_line_km":0.56,"median_min":6.99,"population":37344,"band_colour":"#2e8b7a"},{"ward_label":"98-Prakash Nagar","straight_line_km":0.57,"median_min":7.12,"population":32913,"band_colour":"#2e8b7a"},{"ward_label":"23-Nagavara","straight_line_km":0.58,"median_min":7.25,"population":60483,"band_colour":"#2e8b7a"},{"ward_label":"95-Subhash Nagar","straight_line_km":0.59,"median_min":7.35,"population":37693,"band_colour":"#2e8b7a"},{"ward_label":"121-Binnipete","straight_line_km":0.63,"median_min":7.93,"population":37354,"band_colour":"#2e8b7a"},{"ward_label":"181-Kumaraswamy Layout","straight_line_km":0.64,"median_min":7.98,"population":47182,"band_colour":"#2e8b7a"},{"ward_label":"143-Vishveshwara Puram","straight_line_km":0.65,"median_min":8.12,"population":32462,"band_colour":"#2e8b7a"},{"ward_label":"80-Hoysala Nagar","straight_line_km":0.66,"median_min":8.24,"population":35228,"band_colour":"#2e8b7a"},{"ward_label":"76-Gayithri Nagar","straight_line_km":0.66,"median_min":8.26,"population":33236,"band_colour":"#2e8b7a"},{"ward_label":"31-Kushal Nagar","straight_line_km":0.7,"median_min":8.52,"population":41936,"band_colour":"#2e8b7a"},{"ward_label":"136-Jagajivanaramnagar","straight_line_km":0.69,"median_min":8.61,"population":38639,"band_colour":"#2e8b7a"},{"ward_label":"144-Siddapura","straight_line_km":0.7,"median_min":8.74,"population":34879,"band_colour":"#2e8b7a"},{"ward_label":"138-Chalavadipalya","straight_line_km":0.7,"median_min":8.79,"population":24801,"band_colour":"#2e8b7a"},{"ward_label":"108-Sriramamandir","straight_line_km":0.76,"median_min":8.9,"population":33866,"band_colour":"#2e8b7a"},{"ward_label":"30-Kadugondanahalli","straight_line_km":0.72,"median_min":8.98,"population":45748,"band_colour":"#2e8b7a"},{"ward_label":"123-Vijayanagar","straight_line_km":0.72,"median_min":8.99,"population":40331,"band_colour":"#2e8b7a"},{"ward_label":"168-Pattabhiram Nagar","straight_line_km":0.73,"median_min":9.18,"population":28353,"band_colour":"#2e8b7a"},{"ward_label":"118-Sudham Nagara","straight_line_km":0.74,"median_min":9.31,"population":28784,"band_colour":"#2e8b7a"},{"ward_label":"65-Kadu Malleshwar Ward","straight_line_km":0.75,"median_min":9.36,"population":35609,"band_colour":"#2e8b7a"},{"ward_label":"122-Kempapura Agrahara","straight_line_km":0.75,"median_min":9.43,"population":40032,"band_colour":"#2e8b7a"},{"ward_label":"110-Sampangiram Nagar","straight_line_km":0.77,"median_min":9.56,"population":27504,"band_colour":"#2e8b7a"},{"ward_label":"106-Dr. Raj Kumar Ward","straight_line_km":0.78,"median_min":9.72,"population":24181,"band_colour":"#2e8b7a"},{"ward_label":"104-Govindaraja Nagar","straight_line_km":0.78,"median_min":9.76,"population":26873,"band_colour":"#2e8b7a"},{"ward_label":"180-Banashankari Temple ward","straight_line_km":0.81,"median_min":10.17,"population":42171,"band_colour":"#2e8b7a"},{"ward_label":"63-Jayamahal","straight_line_km":0.82,"median_min":10.27,"population":21728,"band_colour":"#2e8b7a"},{"ward_label":"77-Dattatreya Temple","straight_line_km":0.86,"median_min":10.74,"population":33388,"band_colour":"#2e8b7a"},{"ward_label":"36-Mattikere","straight_line_km":0.86,"median_min":10.81,"population":37036,"band_colour":"#2e8b7a"},{"ward_label":"151-Koramangala","straight_line_km":0.87,"median_min":10.89,"population":38316,"band_colour":"#2e8b7a"},{"ward_label":"135-Padarayanapura","straight_line_km":0.89,"median_min":11.16,"population":37599,"band_colour":"#2e8b7a"},{"ward_label":"171-Gurappanapalya","straight_line_km":0.93,"median_min":11.63,"population":48991,"band_colour":"#2e8b7a"},{"ward_label":"145-Hombegowda Nagara","straight_line_km":1.03,"median_min":11.69,"population":38309,"band_colour":"#2e8b7a"},{"ward_label":"164-Vidyapeeta ward","straight_line_km":0.94,"median_min":11.8,"population":43483,"band_colour":"#2e8b7a"},{"ward_label":"146-Lakkasandra","straight_line_km":0.95,"median_min":11.81,"population":30667,"band_colour":"#2e8b7a"},{"ward_label":"140-Chamrajapet","straight_line_km":0.95,"median_min":11.85,"population":32213,"band_colour":"#2e8b7a"},{"ward_label":"152-Suddagunte Palya","straight_line_km":0.96,"median_min":11.98,"population":39997,"band_colour":"#2e8b7a"},{"ward_label":"27-Banasavadi","straight_line_km":0.96,"median_min":12.0,"population":51268,"band_colour":"#2e8b7a"},{"ward_label":"124-Hosahalli","straight_line_km":0.97,"median_min":12.11,"population":37347,"band_colour":"#2e8b7a"},{"ward_label":"91-Bharathi Nagar","straight_line_km":0.99,"median_min":12.41,"population":32689,"band_colour":"#2e8b7a"},{"ward_label":"100-Basaveshwara Nagar","straight_line_km":0.99,"median_min":12.43,"population":30333,"band_colour":"#2e8b7a"},{"ward_label":"177-J P Nagar","straight_line_km":1.03,"median_min":12.51,"population":28846,"band_colour":"#2e8b7a"},{"ward_label":"167-Yediyur","straight_line_km":1.0,"median_min":12.51,"population":32756,"band_colour":"#2e8b7a"},{"ward_label":"185-Yelchenahalli","straight_line_km":1.01,"median_min":12.57,"population":46943,"band_colour":"#2e8b7a"},{"ward_label":"111-Shantala Nagar","straight_line_km":1.01,"median_min":12.67,"population":22995,"band_colour":"#2e8b7a"},{"ward_label":"42-Lakshmi Devi Nagar","straight_line_km":1.47,"median_min":12.75,"population":41352,"band_colour":"#2e8b7a"},{"ward_label":"183-Chikkalsandra","straight_line_km":1.02,"median_min":12.77,"population":43364,"band_colour":"#2e8b7a"},{"ward_label":"109-Chickpete","straight_line_km":1.03,"median_min":12.85,"population":33292,"band_colour":"#2e8b7a"},{"ward_label":"90-Halsoor","straight_line_km":1.06,"median_min":13.2,"population":35090,"band_colour":"#2e8b7a"},{"ward_label":"125-Marenahalli","straight_line_km":1.26,"median_min":13.44,"population":21171,"band_colour":"#2e8b7a"},{"ward_label":"37-Yeshwanthpura","straight_line_km":1.19,"median_min":13.45,"population":41107,"band_colour":"#2e8b7a"},{"ward_label":"159-Kengeri","straight_line_km":1.21,"median_min":13.47,"population":40771,"band_colour":"#2e8b7a"},{"ward_label":"154-Basavanagudi","straight_line_km":1.1,"median_min":13.8,"population":32640,"band_colour":"#2e8b7a"},{"ward_label":"18-Radhakrishna Temple Ward","straight_line_km":1.11,"median_min":13.82,"population":35122,"band_colour":"#2e8b7a"},{"ward_label":"48-Muneshwara Nagar","straight_line_km":1.16,"median_min":14.2,"population":35814,"band_colour":"#2e8b7a"},{"ward_label":"172-Madivala","straight_line_km":1.26,"median_min":14.23,"population":42624,"band_colour":"#2e8b7a"},{"ward_label":"166-Karisandra","straight_line_km":1.14,"median_min":14.3,"population":27040,"band_colour":"#2e8b7a"},{"ward_label":"44-Marappana Palya","straight_line_km":1.29,"median_min":14.39,"population":40212,"band_colour":"#2e8b7a"},{"ward_label":"67-Nagapura","straight_line_km":1.55,"median_min":14.4,"population":34574,"band_colour":"#2e8b7a"},{"ward_label":"94-Gandhinagar","straight_line_km":1.18,"median_min":14.69,"population":31208,"band_colour":"#2e8b7a"},{"ward_label":"32-Kaval Bairasandra","straight_line_km":1.18,"median_min":14.81,"population":39334,"band_colour":"#2e8b7a"},{"ward_label":"52-K R Puram","straight_line_km":1.29,"median_min":14.84,"population":35168,"band_colour":"#2e8b7a"},{"ward_label":"55-Devasandra","straight_line_km":1.21,"median_min":14.98,"population":33946,"band_colour":"#2e8b7a"},{"ward_label":"58-New Tippasandara","straight_line_km":1.2,"median_min":14.98,"population":43983,"band_colour":"#2e8b7a"},{"ward_label":"24-HBR Layout","straight_line_km":1.33,"median_min":15.0,"population":58967,"band_colour":"#2e8b7a"},{"ward_label":"176-BTM Layout","straight_line_km":1.35,"median_min":15.2,"population":52250,"band_colour":"#2e8b7a"},{"ward_label":"142-Sunkenahalli","straight_line_km":1.24,"median_min":15.51,"population":34666,"band_colour":"#2e8b7a"},{"ward_label":"141-Azad Nagar","straight_line_km":1.26,"median_min":15.74,"population":38825,"band_colour":"#2e8b7a"},{"ward_label":"93-Vasanth Nagar","straight_line_km":1.27,"median_min":15.81,"population":22815,"band_colour":"#2e8b7a"},{"ward_label":"14-Bagalakunte","straight_line_km":1.45,"median_min":15.9,"population":65113,"band_colour":"#2e8b7a"},{"ward_label":"38-HMT Ward","straight_line_km":1.64,"median_min":15.99,"population":36879,"band_colour":"#2e8b7a"},{"ward_label":"35-Aramane Nagara","straight_line_km":1.33,"median_min":16.02,"population":36738,"band_colour":"#2e8b7a"},{"ward_label":"45-Malleswaram","straight_line_km":1.56,"median_min":16.05,"population":34196,"band_colour":"#2e8b7a"},{"ward_label":"57-C V Raman Nagar","straight_line_km":1.29,"median_min":16.09,"population":58815,"band_colour":"#2e8b7a"},{"ward_label":"179-Shakambari Nagar","straight_line_km":1.42,"median_min":16.15,"population":25871,"band_colour":"#2e8b7a"},{"ward_label":"29-Kacharkanahalli","straight_line_km":1.37,"median_min":16.29,"population":33588,"band_colour":"#2e8b7a"},{"ward_label":"163-Katriguppe","straight_line_km":1.31,"median_min":16.34,"population":45572,"band_colour":"#2e8b7a"},{"ward_label":"17-J P Park","straight_line_km":1.31,"median_min":16.4,"population":49610,"band_colour":"#2e8b7a"},{"ward_label":"7-Byatarayanapura","straight_line_km":1.53,"median_min":16.53,"population":72154,"band_colour":"#2e8b7a"},{"ward_label":"81-Vijnana Nagar","straight_line_km":1.32,"median_min":16.53,"population":57062,"band_colour":"#2e8b7a"},{"ward_label":"60-Sagayarapuram","straight_line_km":1.68,"median_min":16.87,"population":35334,"band_colour":"#2e8b7a"},{"ward_label":"101-Kamakshipalya","straight_line_km":1.48,"median_min":16.97,"population":30051,"band_colour":"#2e8b7a"},{"ward_label":"64-Rajamahal Guttahalli","straight_line_km":1.38,"median_min":17.26,"population":31118,"band_colour":"#2e8b7a"},{"ward_label":"66-Subramanya Nagar","straight_line_km":1.46,"median_min":17.76,"population":35709,"band_colour":"#2e8b7a"},{"ward_label":"147-Adugodi","straight_line_km":1.47,"median_min":18.32,"population":34299,"band_colour":"#2e8b7a"},{"ward_label":"4-Yelahanka Satellite Town","straight_line_km":1.78,"median_min":18.41,"population":41986,"band_colour":"#2e8b7a"},{"ward_label":"78-Pulikeshinagar","straight_line_km":1.51,"median_min":18.45,"population":28835,"band_colour":"#2e8b7a"},{"ward_label":"43-Nandini Layout","straight_line_km":1.84,"median_min":18.55,"population":51200,"band_colour":"#2e8b7a"},{"ward_label":"173-Jakkasandra","straight_line_km":1.54,"median_min":18.73,"population":33521,"band_colour":"#2e8b7a"},{"ward_label":"126-Maruthi Mandir ward","straight_line_km":1.99,"median_min":18.78,"population":29319,"band_colour":"#2e8b7a"},{"ward_label":"19-Sanjaya Nagar","straight_line_km":1.5,"median_min":18.78,"population":32491,"band_colour":"#2e8b7a"},{"ward_label":"134-Bapuji Nagar","straight_line_km":1.52,"median_min":19.03,"population":49484,"band_colour":"#2e8b7a"},{"ward_label":"61-S K Garden","straight_line_km":1.85,"median_min":19.1,"population":38050,"band_colour":"#2e8b7a"},{"ward_label":"8-Kodigehalli","straight_line_km":1.53,"median_min":19.15,"population":47546,"band_colour":"#2e8b7a"},{"ward_label":"112-Domlur","straight_line_km":1.56,"median_min":19.23,"population":30638,"band_colour":"#2e8b7a"},{"ward_label":"127-Mudalapalya","straight_line_km":2.53,"median_min":19.35,"population":43729,"band_colour":"#2e8b7a"},{"ward_label":"20-Ganga Nagar","straight_line_km":1.7,"median_min":19.39,"population":27361,"band_colour":"#2e8b7a"},{"ward_label":"49-Lingarajapura","straight_line_km":1.56,"median_min":19.53,"population":37955,"band_colour":"#2e8b7a"},{"ward_label":"178-Sarakki","straight_line_km":1.57,"median_min":19.61,"population":31034,"band_colour":"#2e8b7a"},{"ward_label":"117-Shanthi Nagar","straight_line_km":1.61,"median_min":19.77,"population":42095,"band_colour":"#2e8b7a"},{"ward_label":"79-Sarvagna Nagar","straight_line_km":1.59,"median_min":19.82,"population":37291,"band_colour":"#2e8b7a"},{"ward_label":"133-Hampi Nagar","straight_line_km":1.89,"median_min":20.14,"population":35113,"band_colour":"#2e8b7a"},{"ward_label":"186-Jaraganahalli","straight_line_km":1.62,"median_min":20.23,"population":38294,"band_colour":"#2e8b7a"},{"ward_label":"21-Hebbala","straight_line_km":2.15,"median_min":20.26,"population":32516,"band_colour":"#2e8b7a"},{"ward_label":"82-Garudachar Playa","straight_line_km":1.64,"median_min":20.27,"population":49631,"band_colour":"#2e8b7a"},{"ward_label":"62-Ramaswamy Palya","straight_line_km":1.64,"median_min":20.56,"population":34394,"band_colour":"#2e8b7a"},{"ward_label":"88-Jeevanbhima Nagar","straight_line_km":1.67,"median_min":20.82,"population":38251,"band_colour":"#2e8b7a"},{"ward_label":"103-Kaveripura","straight_line_km":2.04,"median_min":21.06,"population":53532,"band_colour":"#2e8b7a"},{"ward_label":"15-T Dasarahalli","straight_line_km":2.98,"median_min":21.46,"population":33042,"band_colour":"#2e8b7a"},{"ward_label":"148-Ejipura","straight_line_km":1.72,"median_min":21.52,"population":47004,"band_colour":"#2e8b7a"},{"ward_label":"22-Vishwanath Nagenahalli","straight_line_km":1.77,"median_min":22.11,"population":51592,"band_colour":"#2e8b7a"},{"ward_label":"161-Hosakerehalli","straight_line_km":2.18,"median_min":22.27,"population":46805,"band_colour":"#2e8b7a"},{"ward_label":"56-A Narayanapura","straight_line_km":2.22,"median_min":22.31,"population":43443,"band_colour":"#2e8b7a"},{"ward_label":"155-Hanumanth Nagar","straight_line_km":1.81,"median_min":22.37,"population":36982,"band_colour":"#2e8b7a"},{"ward_label":"1-Kempegowda Ward","straight_line_km":2.1,"median_min":22.4,"population":34783,"band_colour":"#2e8b7a"},{"ward_label":"28-Kammanahalli","straight_line_km":1.8,"median_min":22.48,"population":47074,"band_colour":"#2e8b7a"},{"ward_label":"47-Devara Jeevanahalli","straight_line_km":1.8,"median_min":22.56,"population":42135,"band_colour":"#2e8b7a"},{"ward_label":"69-Laggere","straight_line_km":2.95,"median_min":22.93,"population":57077,"band_colour":"#2e8b7a"},{"ward_label":"132-Attiguppe","straight_line_km":2.56,"median_min":22.97,"population":41487,"band_colour":"#2e8b7a"},{"ward_label":"51-Vijnanapura","straight_line_km":2.35,"median_min":23.13,"population":46159,"band_colour":"#2e8b7a"},{"ward_label":"157-Gali Anjenaya Temple ward","straight_line_km":2.08,"median_min":23.35,"population":34653,"band_colour":"#2e8b7a"},{"ward_label":"68-Mahalakshimpuram","straight_line_km":2.05,"median_min":23.7,"population":44615,"band_colour":"#2e8b7a"},{"ward_label":"50-Benniganahalli","straight_line_km":2.11,"median_min":23.9,"population":49094,"band_colour":"#2e8b7a"},{"ward_label":"5-Jakkuru","straight_line_km":2.16,"median_min":24.01,"population":52025,"band_colour":"#2e8b7a"},{"ward_label":"198-Hemmigepura","straight_line_km":2.06,"median_min":24.6,"population":50440,"band_colour":"#2e8b7a"},{"ward_label":"34-Gangenahalli","straight_line_km":2.31,"median_min":24.68,"population":24308,"band_colour":"#2e8b7a"},{"ward_label":"75-Shankar Matt","straight_line_km":1.99,"median_min":24.82,"population":48734,"band_colour":"#2e8b7a"},{"ward_label":"53-Basavanapura","straight_line_km":2.28,"median_min":24.94,"population":48585,"band_colour":"#2e8b7a"},{"ward_label":"102-Vrisabhavathi Nagar","straight_line_km":2.31,"median_min":24.95,"population":50893,"band_colour":"#2e8b7a"},{"ward_label":"158-Deepanjali Nagar","straight_line_km":3.06,"median_min":25.86,"population":45928,"band_colour":"#2e8b7a"},{"ward_label":"156-Srinagar","straight_line_km":2.0,"median_min":26.72,"population":41379,"band_colour":"#2e8b7a"},{"ward_label":"6-Thanisandra","straight_line_km":2.34,"median_min":27.49,"population":71855,"band_colour":"#2e8b7a"},{"ward_label":"74-Shakthi Ganapathi Nagar","straight_line_km":2.32,"median_min":28.03,"population":43844,"band_colour":"#2e8b7a"},{"ward_label":"12-Shettihalli","straight_line_km":2.25,"median_min":28.13,"population":61071,"band_colour":"#2e8b7a"},{"ward_label":"162-Girinagar","straight_line_km":2.19,"median_min":28.47,"population":43195,"band_colour":"#2e8b7a"},{"ward_label":"46-Jayachamarajendra  Nagar","straight_line_km":2.24,"median_min":29.81,"population":31449,"band_colour":"#2e8b7a"},{"ward_label":"10-Dodda Bommasandra","straight_line_km":3.0,"median_min":30.4,"population":36396,"band_colour":"#e8c468"},{"ward_label":"59-Maruthi Seva Nagar","straight_line_km":2.35,"median_min":31.39,"population":40362,"band_colour":"#e8c468"},{"ward_label":"85-Dodda Nekkundi","straight_line_km":2.34,"median_min":31.47,"population":63083,"band_colour":"#e8c468"},{"ward_label":"128-Nagarabhavi","straight_line_km":3.54,"median_min":32.2,"population":35780,"band_colour":"#e8c468"},{"ward_label":"2-Chowdeswari Ward","straight_line_km":2.91,"median_min":33.08,"population":36602,"band_colour":"#e8c468"},{"ward_label":"33-Manorayanapalya","straight_line_km":2.44,"median_min":33.42,"population":47926,"band_colour":"#e8c468"},{"ward_label":"73-Kottegepalya","straight_line_km":3.4,"median_min":33.55,"population":68922,"band_colour":"#e8c468"},{"ward_label":"130-Ullalu","straight_line_km":3.83,"median_min":34.1,"population":58199,"band_colour":"#e8c468"},{"ward_label":"114-Agaram","straight_line_km":2.49,"median_min":34.35,"population":36916,"band_colour":"#e8c468"},{"ward_label":"115-Vannarpet","straight_line_km":2.32,"median_min":34.95,"population":37060,"band_colour":"#e8c468"},{"ward_label":"116-Nilasandra","straight_line_km":2.25,"median_min":34.95,"population":48534,"band_colour":"#e8c468"},{"ward_label":"131-Nayandahalli","straight_line_km":4.27,"median_min":35.3,"population":42785,"band_colour":"#e8c468"},{"ward_label":"189-Hongasandra","straight_line_km":3.67,"median_min":35.95,"population":68554,"band_colour":"#e8c468"},{"ward_label":"25-Horamavu","straight_line_km":2.28,"median_min":36.67,"population":95368,"band_colour":"#e8c468"},{"ward_label":"39-Chokkasandra","straight_line_km":3.3,"median_min":37.15,"population":59289,"band_colour":"#e8c468"},{"ward_label":"16-Jalahalli","straight_line_km":2.33,"median_min":38.58,"population":37959,"band_colour":"#e8c468"},{"ward_label":"9-Vidyaranyapura","straight_line_km":3.07,"median_min":39.09,"population":57195,"band_colour":"#e8c468"},{"ward_label":"26-Ramamurthy Nagar","straight_line_km":2.99,"median_min":39.24,"population":47358,"band_colour":"#e8c468"},{"ward_label":"71-Hegganahalli","straight_line_km":4.97,"median_min":40.06,"population":66314,"band_colour":"#e8c468"},{"ward_label":"87-HAL Airport","straight_line_km":2.18,"median_min":40.3,"population":39926,"band_colour":"#e8c468"},{"ward_label":"113-Konena Agrahara","straight_line_km":2.58,"median_min":40.38,"population":38108,"band_colour":"#e8c468"},{"ward_label":"174-HSR Layout","straight_line_km":3.42,"median_min":40.49,"population":63033,"band_colour":"#e8c468"},{"ward_label":"188-Bilekhalli","straight_line_km":2.49,"median_min":41.44,"population":49884,"band_colour":"#e8c468"},{"ward_label":"41-Peenya Industrial Area","straight_line_km":3.92,"median_min":41.46,"population":57814,"band_colour":"#e8c468"},{"ward_label":"197-Vasanthpura","straight_line_km":2.23,"median_min":41.58,"population":62057,"band_colour":"#e8c468"},{"ward_label":"187-Puttenahalli","straight_line_km":2.35,"median_min":41.83,"population":49207,"band_colour":"#e8c468"},{"ward_label":"160-Rajarajeshwari Nagar","straight_line_km":3.11,"median_min":42.34,"population":56897,"band_colour":"#e8c468"},{"ward_label":"129-Jnana Bharathi ward","straight_line_km":4.59,"median_min":42.95,"population":68132,"band_colour":"#e8c468"},{"ward_label":"3-Atturu","straight_line_km":3.86,"median_min":43.42,"population":58129,"band_colour":"#e8c468"},{"ward_label":"13-Mallasandra","straight_line_km":2.19,"median_min":43.55,"population":41482,"band_colour":"#e8c468"},{"ward_label":"54-Hudi","straight_line_km":3.07,"median_min":44.42,"population":50191,"band_colour":"#e8c468"},{"ward_label":"175-Bommanahalli","straight_line_km":2.88,"median_min":45.22,"population":43585,"band_colour":"#e08a4a"},{"ward_label":"11-Kuvempu Nagar","straight_line_km":4.02,"median_min":45.85,"population":37128,"band_colour":"#e08a4a"},{"ward_label":"184-Uttarahalli","straight_line_km":2.93,"median_min":46.82,"population":57209,"band_colour":"#e08a4a"},{"ward_label":"72-Herohalli","straight_line_km":6.04,"median_min":46.96,"population":62272,"band_colour":"#e08a4a"},{"ward_label":"193-Arakere","straight_line_km":4.44,"median_min":47.56,"population":58355,"band_colour":"#e08a4a"},{"ward_label":"84-Hagadur","straight_line_km":2.64,"median_min":48.61,"population":50556,"band_colour":"#e08a4a"},{"ward_label":"195-Konankunte","straight_line_km":3.03,"median_min":51.76,"population":57335,"band_colour":"#e08a4a"},{"ward_label":"70-Rajagopal Nagar","straight_line_km":4.06,"median_min":51.81,"population":61479,"band_colour":"#e08a4a"},{"ward_label":"83-Kadugodi","straight_line_km":3.42,"median_min":52.57,"population":43942,"band_colour":"#e08a4a"},{"ward_label":"40-Dodda Bidarakallu","straight_line_km":5.68,"median_min":53.7,"population":72794,"band_colour":"#e08a4a"},{"ward_label":"194-Gottigere","straight_line_km":5.61,"median_min":54.54,"population":51911,"band_colour":"#e08a4a"},{"ward_label":"192-Begur","straight_line_km":6.69,"median_min":57.64,"population":80037,"band_colour":"#e08a4a"},{"ward_label":"190-Mangammanapalya","straight_line_km":4.47,"median_min":59.33,"population":65890,"band_colour":"#e08a4a"},{"ward_label":"196-Anjanapura","straight_line_km":5.63,"median_min":66.26,"population":45608,"band_colour":"#c0392b"},{"ward_label":"191-Singasandra","straight_line_km":6.76,"median_min":70.38,"population":71004,"band_colour":"#c0392b"},{"ward_label":"86-Marathahalli","straight_line_km":3.23,"median_min":71.07,"population":39768,"band_colour":"#c0392b"},{"ward_label":"150-Bellanduru","straight_line_km":5.49,"median_min":77.2,"population":80180,"band_colour":"#c0392b"},{"ward_label":"149-Varthuru","straight_line_km":5.08,"median_min":102.66,"population":54625,"band_colour":"#c0392b"}],"sensitivity":[{"label":"Headline: 500 m walk, every route, every hospital","population_over_45":1033678,"wards_over_45":18,"city_median":18.4},{"label":"Walk up to 800 m to a stop","population_over_45":564050,"wards_over_45":9,"city_median":18.4},{"label":"Only routes every 30 min or better","population_over_45":1585268,"wards_over_45":28,"city_median":18.4},{"label":"Only hospitals treating more than one illness","population_over_45":1132769,"wards_over_45":20,"city_median":18.8},{"label":"No changing buses","population_over_45":1033678,"wards_over_45":18,"city_median":18.4}],"facility_mix":[{"type":"Tertiary centre","count":16},{"type":"District hospital","count":10},{"type":"Teaching hospital","count":10},{"type":"Community health centre","count":9},{"type":"Specialty hospital","count":4},{"type":"Taluk hospital","count":2}]};
+
+const nf = new Intl.NumberFormat("en-IN");
+const brightness = hex => {
+  const v = hex.replace("#", "");
+  const r = parseInt(v.slice(0, 2), 16), g = parseInt(v.slice(2, 4), 16), b = parseInt(v.slice(4, 6), 16);
+  return (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+};
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* counters ------------------------------------------------------------- */
+document.querySelectorAll("[data-count]").forEach(el => {
+  const target = Number(el.dataset.count);
+  if (reduced) { el.textContent = nf.format(target); return; }
+  const started = performance.now();
+  const run = now => {
+    const t = Math.min(1, (now - started) / 1400);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = nf.format(Math.round(target * eased));
+    if (t < 1) requestAnimationFrame(run);
+  };
+  requestAnimationFrame(run);
+});
+
+/* band ladder ---------------------------------------------------------- */
+const ladder = document.getElementById("ladder");
+const biggest = Math.max(...DATA.bands.map(b => b.population));
+DATA.bands.forEach((b, i) => {
+  const row = document.createElement("div");
+  row.className = "rung";
+  row.innerHTML =
+    `<div class="name">${b.band}</div>
+     <div class="bar"><i style="background:${b.colour}"></i>
+     <em>${nf.format(b.population)} people &middot; ${b.share}% &middot; ${b.wards} wards</em></div>`;
+  ladder.appendChild(row);
+  const fill = row.querySelector("i");
+  const label = row.querySelector("em");
+  const width = (b.population / biggest) * 100;
+
+  // Put the caption inside the bar when there is room, and pick black or white
+  // for it by the brightness of the band colour. The yellow band needs dark
+  // text and the red band needs light text; guessing once for both looked bad.
+  if (width < 40) {
+    label.style.left = "calc(" + width + "% + 14px)";
+    label.style.color = "var(--paper)";
+  } else {
+    label.style.color = brightness(b.colour) > 0.62 ? "#10101a" : "#ffffff";
+  }
+  if (reduced) { fill.style.width = width + "%"; }
+  else setTimeout(() => { fill.style.width = width + "%"; }, 260 + i * 130);
+});
+
+/* tables --------------------------------------------------------------- */
+const colourFor = m => m < 30 ? "#2E8B7A" : m < 45 ? "#E8C468" : m < 60 ? "#E08A4A" : "#C0392B";
+
+document.getElementById("worst").innerHTML = DATA.worst.map(r =>
+  `<tr><td class="ward"><span class="dot" style="background:${colourFor(r.median_min)}"></span>${r.ward_label}</td>
+   <td>${r.median_min.toFixed(0)}</td><td>${nf.format(r.population)}</td>
+   <td>${r.straight_line_km.toFixed(1)}</td></tr>`).join("");
+
+document.getElementById("slow").innerHTML = DATA.close_but_slow.map(r =>
+  `<tr><td class="ward"><span class="dot" style="background:${colourFor(r.median_min)}"></span>${r.ward_label}</td>
+   <td>${r.median_min.toFixed(0)}</td><td>${r.straight_line_km.toFixed(1)}</td>
+   <td>${r.penalty_ratio.toFixed(2)}&times;</td></tr>`).join("");
+
+document.getElementById("sens").innerHTML = DATA.sensitivity.map(r =>
+  `<tr><td class="ward">${r.label}</td><td>${nf.format(r.population_over_45)}</td>
+   <td>${r.wards_over_45}</td></tr>`).join("");
+
+/* scatter -------------------------------------------------------------- */
+(function plot() {
+  const svg = document.getElementById("plot");
+  const W = 900, H = 420, L = 62, R = 18, T = 16, B = 46;
+  const pts = DATA.scatter.filter(d => d.median_min != null);
+  const maxX = Math.ceil(Math.max(...pts.map(d => d.straight_line_km)));
+  const maxY = Math.ceil(Math.max(...pts.map(d => d.median_min)) / 20) * 20;
+  const x = v => L + (v / maxX) * (W - L - R);
+  const y = v => H - B - (v / maxY) * (H - T - B);
+  let out = "";
+
+  for (let g = 0; g <= maxY; g += 20) {
+    out += `<line class="grid" x1="${L}" y1="${y(g)}" x2="${W - R}" y2="${y(g)}"/>`;
+    out += `<text x="${L - 10}" y="${y(g) + 4}" text-anchor="end">${g}</text>`;
+  }
+  for (let g = 0; g <= maxX; g += 2) {
+    out += `<text x="${x(g)}" y="${H - B + 20}" text-anchor="middle">${g}</text>`;
+  }
+  out += `<text x="${L}" y="${H - 8}" text-anchor="start">Straight-line kilometres to the nearest hospital</text>`;
+  out += `<text transform="translate(16 ${T + 96}) rotate(-90)" text-anchor="middle">Typical bus journey, minutes</text>`;
+
+  pts.forEach(d => {
+    const r = Math.max(3.2, Math.sqrt(d.population) / 62);
+    out += `<circle cx="${x(d.straight_line_km).toFixed(1)}" cy="${y(d.median_min).toFixed(1)}" r="${r.toFixed(1)}"
+      fill="${d.band_colour}"><title>${d.ward_label} — ${d.median_min.toFixed(0)} min, ${nf.format(d.population)} people</title></circle>`;
+  });
+  svg.innerHTML = out;
+})();
+</script>
+</body>
+</html>

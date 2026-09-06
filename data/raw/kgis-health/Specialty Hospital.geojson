@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "Specialty Hospital",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 3, "KGISSHOID": 1, "DepartmentCode": "01", "SHOName": "Sri Jayadeva Institute of Cardio-Vascular Sciences & Research Institute, Bangalore", "KGISVillageID": 15545, "KGISWardID": 0, "KGISCode": "29572055428031620000HFMEEPUSCRSHO0001" }, "geometry": { "type": "Point", "coordinates": [ 77.599328000045091, 12.917958000021427 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 4, "KGISSHOID": 2, "DepartmentCode": "02", "SHOName": "Indira Gandhi Institute of Child Health Hospital, Bangalore", "KGISVillageID": 15680, "KGISWardID": 0, "KGISCode": "29572055428031620000HFMEEPUSCRSHO0002" }, "geometry": { "type": "Point", "coordinates": [ 77.592016099754659, 12.937318100245145 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 6, "KGISSHOID": 3, "DepartmentCode": "03", "SHOName": "Institute of Nephro-Urology, Bangalore", "KGISVillageID": 30092, "KGISWardID": 0, "KGISCode": "29572055428031620000HFMEEPUSCRSHO0003" }, "geometry": { "type": "Point", "coordinates": [ 77.572866899902735, 12.961923999985364 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 7, "KGISSHOID": 4, "DepartmentCode": "04", "SHOName": "Karnataka Institute of Diabetology\n, Bangalore", "KGISVillageID": 30092, "KGISWardID": 0, "KGISCode": "29572055428031620000HFMEEPUSCRSHO0004" }, "geometry": { "type": "Point", "coordinates": [ 77.572866899902735, 12.961923999985364 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 2, "KGISSHOID": 5, "DepartmentCode": "05", "SHOName": "SDS TRC and Rajiv Gandhi Institute of Chest Diseases, Bangalore", "KGISVillageID": 15153, "KGISWardID": 0, "KGISCode": "29572055428031620000HFMEEPUSCRSHO0005" }, "geometry": { "type": "Point", "coordinates": [ 77.590696800026492, 12.938395599938499 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 5, "KGISSHOID": 6, "DepartmentCode": "06", "SHOName": "Kidwai Memorial Institute of Oncology, Bangalore", "KGISVillageID": 15680, "KGISWardID": 0, "KGISCode": "29572055428031620000HFMEEPUSCRSHO0006" }, "geometry": { "type": "Point", "coordinates": [ 77.598535099934836, 12.93756910019035 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 1, "KGISSHOID": 7, "DepartmentCode": "07", "SHOName": "Dharwad Institute of Mental Health and Neurosciences, Dharwad", "KGISVillageID": 6552, "KGISWardID": 0, "KGISCode": "29562054738030830000HFMEEPUSCRSHO0001" }, "geometry": { "type": "Point", "coordinates": [ 74.998297699539364, 15.465034300190089 ] } }
+]
+}
