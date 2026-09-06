@@ -5,33 +5,44 @@ because half of these are the answer to "why did you do it that way".
 
 ## What GTFS actually is, in my own words
 
-GTFS is the format transport agencies use to publish a timetable so that a
-computer can read it. It is not one file, it is a zip of plain CSVs that join
-to each other like a small relational database, and once that clicked the rest
-of the project was straightforward.
+I had not heard of GTFS before this project. I assumed a timetable would be
+one file. It is not. It is a zip of about ten CSVs that point at each other,
+and until I worked out which file points at which, none of it made sense.
 
-The chain runs like this. `agency.txt` says who operates the network — one row
-here, BMTC. `routes.txt` is the list of routes as a passenger thinks of them,
-so route 500D is one row. `trips.txt` is one row for every individual running
-of a route: 500D leaving at 07:10 is a different trip from 500D leaving at
-07:40, and both point back at the same `route_id`. `stops.txt` is every stop
-with a latitude and longitude. Then `stop_times.txt` is the one that carries
-the actual timetable: one row per trip per stop, with a `stop_sequence` telling
-you the order and an arrival and departure time. It is by far the biggest file
-— 1.5 million rows here — because it is the cross product of every trip and
-every stop on it. `calendar.txt` says which days a service runs, and
-`shapes.txt` holds the drawn path of the route for map-making, which this
-project does not need.
+Here is the order that finally made it click.
 
-So to answer "can I get from stop A to stop B", you join stops to stop_times to
-trips to routes, look for a trip that visits A and then later visits B, and
-subtract the two times. Everything in `03_bus_network.py` and
-`04_journey_times.py` is that one idea, made fast enough to run over the whole
-feed.
+`routes.txt` is the list of routes the way a passenger thinks about them.
+500D is one row.
 
-The other thing worth knowing: times in GTFS can read `25:10:00`. That is not a
-typo, it means 1:10 a.m. on the service day that started the previous morning,
-so parsing hours as 0-23 will throw.
+`trips.txt` is one row for every time that route actually runs. 500D leaving
+at 07:10 is one row, 500D leaving at 07:40 is another. Both carry the same
+`route_id`, which is how they point back to the route.
+
+`stops.txt` is every stop with a latitude and longitude. Nothing complicated
+there.
+
+`stop_times.txt` is where the timetable really lives, and it is enormous.
+One row for every trip at every stop that trip visits. 1.5 million rows in
+this feed. It took me a while to see why it has to be that big. A route with
+40 stops running 60 times a day produces 2,400 rows on its own, and BMTC has
+4,381 routes.
+
+`calendar.txt` says which days a service runs. `shapes.txt` holds the drawn
+path of the route so you can put it on a map. I did not need shapes and
+ignored the file, which is a good thing because it is 112 MB on its own.
+
+Once I could see it that way, the question I actually wanted to answer got
+easy to say out loud. To find out whether you can get from stop A to stop B,
+look for a trip that stops at A and then stops at B further along its
+sequence, and subtract the two times. Everything in `03_bus_network.py` and
+`04_journey_times.py` is that one sentence, written so it runs over a million
+and a half rows without taking all night.
+
+One thing caught me out badly. Times in GTFS can read `25:10:00`. I was sure
+the file was corrupt. It is not. It means ten past one in the morning on the
+service day that started the previous morning, so a bus leaving at half past
+midnight is still part of Tuesday's service and not Wednesday's. If you parse
+the hour as 0 to 23 it throws, and it throws a long way into the file.
 
 ## Which projection, and why
 
